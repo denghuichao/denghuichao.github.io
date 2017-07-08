@@ -175,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="proxy-pool-代理IP池"><a href="#proxy-pool-代理IP池" class="headerlink" title="proxy-pool 代理IP池"></a>proxy-pool 代理IP池</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在玩爬虫, 很多网站有反爬虫机制,会对访问频率太高的IP进行禁封.于是到网上去找免费的代理,使用过程中发现这些代理的质量不高,很多都不能使用,因此想到做个代理池.程序主动收集代理IP,并定时对这些代理进行可用性验证,同时提供接口获取可用的代理供爬虫使用.  </p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在玩爬虫, 很多网站有反爬虫机制,会对访问频率太高的IP进行禁封.于是到网上去找免费的代理,使用过程中发现这些代理的质量不高,很多都不能使用,因此想到做个代理池.程序主动收集代理IP,并定时对这些代理进行可用性验证,同时提供接口获取可用的代理供爬虫使用.  </p>
 <h2 id="代理IP来源"><a href="#代理IP来源" class="headerlink" title="代理IP来源"></a>代理IP来源</h2><p>有很多网站提供代理IP服务,有的免费,质量好的则付费.这里只收集免费的代理IP.目前爬取了<a href="http://www.goubanjia.com/" target="_blank" rel="external">goubanjia</a>,<a href="http://www.kuaidaili.com" target="_blank" rel="external">kuaidaili</a>,<a href="http://www.66ip.cn" target="_blank" rel="external">66IP</a>,<a href="http://www.xicidaili.com" target="_blank" rel="external">xicidaili</a>这几个网站的代理IP.每个网站IP只爬取了前面10页,后面的基本上不可用.</p>
 <h2 id="可用性保证"><a href="#可用性保证" class="headerlink" title="可用性保证"></a>可用性保证</h2><p>爬回来的IP有大部分都是不能用的,要保证爬虫拿到的IP质量较高,就需要进行可用性的验证,在代理不可用时将其删除.</p>
 <h2 id="接口方式"><a href="#接口方式" class="headerlink" title="接口方式"></a>接口方式</h2><p>为了方便客户端(爬虫)获取代理,将接口做成了服务的形式,客户端通过restapi获取代理,并在发现代理不可用时,主动调用api将其删除.</p>
