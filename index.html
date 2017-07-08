@@ -155,6 +155,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-用java写个爬虫IP代理池" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/用java写个爬虫IP代理池/">用java写个爬虫IP代理池</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/08/用java写个爬虫IP代理池/" class="archive-article-date">
+  	<time datetime="2017-07-08T03:21:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="proxy-pool-代理IP池"><a href="#proxy-pool-代理IP池" class="headerlink" title="proxy-pool 代理IP池"></a>proxy-pool 代理IP池</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在玩爬虫, 很多网站有反爬虫机制,会对访问频率太高的IP进行禁封.于是到网上去找免费的代理,使用过程中发现这些代理的质量不高,很多都不能使用,因此想到做个代理池.程序主动收集代理IP,并定时对这些代理进行可用性验证,同时提供接口获取可用的代理供爬虫使用.  </p>
+<h2 id="代理IP来源"><a href="#代理IP来源" class="headerlink" title="代理IP来源"></a>代理IP来源</h2><p>有很多网站提供代理IP服务,有的免费,质量好的则付费.这里只收集免费的代理IP.目前爬取了<a href="http://www.goubanjia.com/" target="_blank" rel="external">goubanjia</a>,<a href="http://www.kuaidaili.com" target="_blank" rel="external">kuaidaili</a>,<a href="http://www.66ip.cn" target="_blank" rel="external">66IP</a>,<a href="http://www.xicidaili.com" target="_blank" rel="external">xicidaili</a>这几个网站的代理IP.每个网站IP只爬取了前面10页,后面的基本上不可用.</p>
+<h2 id="可用性保证"><a href="#可用性保证" class="headerlink" title="可用性保证"></a>可用性保证</h2><p>爬回来的IP有大部分都是不能用的,要保证爬虫拿到的IP质量较高,就需要进行可用性的验证,在代理不可用时将其删除.</p>
+<h2 id="接口方式"><a href="#接口方式" class="headerlink" title="接口方式"></a>接口方式</h2><p>为了方便客户端(爬虫)获取代理,将接口做成了服务的形式,客户端通过restapi获取代理,并在发现代理不可用时,主动调用api将其删除.</p>
+<h2 id="proxy-pool设计"><a href="#proxy-pool设计" class="headerlink" title="proxy-pool设计"></a>proxy-pool设计</h2><p><img src="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/design.png" alt="原理图"></p>
+<p>整个项目主要分成以下几个模块:</p>
+<ul>
+<li>fetcher 收集网上代理IP的爬虫,目前有<code>GoubanjiaFetcher</code>,<code>KuaiDailiFetcher</code>,<code>Www66IPFetcher</code>,<code>XichiDailiFetcher</code>四个爬虫,分别收集四个网站的代理IP.如果需要收集其他网站的IP,可以在该模块下增加相应实现.</li>
+<li>schedule 定时任务,定时从网络上爬取最新IP,定时验证已有代理的可用性.</li>
+<li>db 存储功能, 目前采用redis保存可用代理</li>
+<li>boot 项目的启动类</li>
+<li>api restapi实现</li>
+<li>utils 一些工具类库<h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2></li>
+</ul>
+<p>项目基于SpringBoot开发,直接打包成jar并启动jar包即可.</p>
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>启动程序即可通过浏览器获取代理ip,目前支持以下操作:</p>
+<ul>
+<li>get 获取一个可用代理  </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/get.png" alt="get"></p>
+<ul>
+<li>get_list 获取多个可用代理  </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/get_list.png" alt="get_list"></p>
+<ul>
+<li>verify 验证代理可用性  </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/verify.png" alt="verify"></p>
+<ul>
+<li>delete 删除不可用代理  </li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/delete.png" alt="delete"></p>
+<h3 id="测试地址"><a href="#测试地址" class="headerlink" title="测试地址"></a>测试地址</h3><p><a href="http://hcdeng.pp.ngrok.cc/api/get_list?num=5" target="_blank" rel="external">http://hcdeng.pp.ngrok.cc/api/get_list?num=5</a></p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>由于能力有限,代码写的比较水,proxy-pool的功能也不完善,欢迎大家指正.如果您认为项目对您有帮助,请给个star~~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/08/用java写个爬虫IP代理池/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
