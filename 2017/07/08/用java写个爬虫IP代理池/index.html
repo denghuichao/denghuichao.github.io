@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>用java写个爬虫IP代理池 | hcdeng‘s blog</title>
+  <title>用Java写个爬虫IP代理池 | hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="简介最近在玩爬虫, 很多网站有反爬虫机制,会对访问频率太高的IP进行禁封.于是到网上去找免费的代理,使用过程中发现这些代理的质量不高,很多都不能使用,因此想到做个代理池.程序主动收集代理IP,并定时对这些代理进行可用性验证,同时提供接口获取可用的代理供爬虫使用.   代理IP来源有很多网站提供代理IP服务,有的免费,质量好的则付费.这里只收集免费的代理IP.目前爬取了goubanjia,kuaid">
 <meta name="keywords" content="Java,Proxy Pool,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用java写个爬虫IP代理池">
+<meta property="og:title" content="用Java写个爬虫IP代理池">
 <meta property="og:url" content="http://yoursite.com/2017/07/08/用java写个爬虫IP代理池/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
 <meta property="og:description" content="简介最近在玩爬虫, 很多网站有反爬虫机制,会对访问频率太高的IP进行禁封.于是到网上去找免费的代理,使用过程中发现这些代理的质量不高,很多都不能使用,因此想到做个代理池.程序主动收集代理IP,并定时对这些代理进行可用性验证,同时提供接口获取可用的代理供爬虫使用.   代理IP来源有很多网站提供代理IP服务,有的免费,质量好的则付费.这里只收集免费的代理IP.目前爬取了goubanjia,kuaid">
@@ -20,9 +20,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/get_list.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/verify.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/delete.png">
-<meta property="og:updated_time" content="2017-07-08T07:06:23.000Z">
+<meta property="og:updated_time" content="2017-07-08T07:14:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用java写个爬虫IP代理池">
+<meta name="twitter:title" content="用Java写个爬虫IP代理池">
 <meta name="twitter:description" content="简介最近在玩爬虫, 很多网站有反爬虫机制,会对访问频率太高的IP进行禁封.于是到网上去找免费的代理,使用过程中发现这些代理的质量不高,很多都不能使用,因此想到做个代理池.程序主动收集代理IP,并定时对这些代理进行可用性验证,同时提供接口获取可用的代理供爬虫使用.   代理IP来源有很多网站提供代理IP服务,有的免费,质量好的则付费.这里只收集免费的代理IP.目前爬取了goubanjia,kuaid">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/design.png">
   
@@ -163,7 +163,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      用java写个爬虫IP代理池
+      用Java写个爬虫IP代理池
     </h1>
   
 
@@ -178,9 +178,9 @@
       
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在玩爬虫, 很多网站有反爬虫机制,会对访问频率太高的IP进行禁封.于是到网上去找免费的代理,使用过程中发现这些代理的质量不高,很多都不能使用,因此想到做个代理池.程序主动收集代理IP,并定时对这些代理进行可用性验证,同时提供接口获取可用的代理供爬虫使用.  </p>
 <h2 id="代理IP来源"><a href="#代理IP来源" class="headerlink" title="代理IP来源"></a>代理IP来源</h2><p>有很多网站提供代理IP服务,有的免费,质量好的则付费.这里只收集免费的代理IP.目前爬取了<a href="http://www.goubanjia.com/" target="_blank" rel="external">goubanjia</a>,<a href="http://www.kuaidaili.com" target="_blank" rel="external">kuaidaili</a>,<a href="http://www.66ip.cn" target="_blank" rel="external">66IP</a>,<a href="http://www.xicidaili.com" target="_blank" rel="external">xicidaili</a>这几个网站的代理IP.每个网站IP只爬取了前面10页,后面的基本上不可用.</p>
+<a id="more"></a>
 <h2 id="可用性保证"><a href="#可用性保证" class="headerlink" title="可用性保证"></a>可用性保证</h2><p>爬回来的IP有大部分都是不能用的,要保证爬虫拿到的IP质量较高,就需要进行可用性的验证,在代理不可用时将其删除.</p>
 <h2 id="接口方式"><a href="#接口方式" class="headerlink" title="接口方式"></a>接口方式</h2><p>为了方便客户端(爬虫)获取代理,将接口做成了服务的形式,客户端通过restapi获取代理,并在发现代理不可用时,主动调用api将其删除.</p>
-<a id="more"></a> 
 <h2 id="proxy-pool设计"><a href="#proxy-pool设计" class="headerlink" title="proxy-pool设计"></a>proxy-pool设计</h2><p><img src="https://raw.githubusercontent.com/denghuichao/proxy-pool/master/images/design.png" alt="原理图"></p>
 <p>整个项目主要分成以下几个模块:</p>
 <ul>
