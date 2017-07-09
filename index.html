@@ -164,39 +164,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="JDCB是什么"><a href="#JDCB是什么" class="headerlink" title="JDCB是什么"></a>JDCB是什么</h3><p>平台无关的JAVA和关系型数据库的接口</p>
-<h3 id="应用程序如何通过JDBC访问数据"><a href="#应用程序如何通过JDBC访问数据" class="headerlink" title="应用程序如何通过JDBC访问数据"></a>应用程序如何通过JDBC访问数据</h3><p><img src="http://ost1popse.bkt.clouddn.com/how-use-jdbc.png" alt="how application use jdbc"></p>
-<h3 id="JDBC的顶层架构"><a href="#JDBC的顶层架构" class="headerlink" title="JDBC的顶层架构"></a>JDBC的顶层架构</h3><p><img src="http://ost1popse.bkt.clouddn.com/jdbc-high-level.png" alt="high-leve"></p>
-<p>JDBC的主要目的是使应用程序通过API读写数据库。但是JDBC不仅仅能够用来读取记录，还可以读取数据库的元数据。比如说表的元数据、视图、存储过程等信息，这些通常可以使用DatabaseMetaData类来获取。</p>
-<p>根据SUN的设计，JDBC API主要分为几部分：</p>
-<ul>
-<li>供应用程序开发者使用的API</li>
-<li>供驱动开发者使用的底层API</li>
-</ul>
-<h3 id="JDBC的详细架构"><a href="#JDBC的详细架构" class="headerlink" title="JDBC的详细架构"></a>JDBC的详细架构</h3><p><img src="http://ost1popse.bkt.clouddn.com/detail.png" alt="detail"></p>
-<p>JDBC的大部分工作都是DriverManager来完成的，DriverManager是个工厂类，它是唯一能够创建数据库连接的类。DriverManager通过Driver来创建连接。主要流程：</p>
-<ul>
-<li>用户代码调用JDBC API </li>
-<li>JDBC通过Class.forName()加载驱动，比如说Class.forName(“oracle.jdbc.driver.OracleDriver”)  </li>
-<li>Class.forName() 自动创建Driver的实例并在DriverManager中注册</li>
-<li>由Driver来跟特定的数据库对话</li>
-</ul>
-<h3 id="应用程序如何和一个活多个关系型数据库交互"><a href="#应用程序如何和一个活多个关系型数据库交互" class="headerlink" title="应用程序如何和一个活多个关系型数据库交互"></a>应用程序如何和一个活多个关系型数据库交互</h3><p><img src="http://ost1popse.bkt.clouddn.com/how-to-interact.png" alt="how to interact"></p>
-<h3 id="JDBC-应用程序API的组成"><a href="#JDBC-应用程序API的组成" class="headerlink" title="JDBC 应用程序API的组成"></a>JDBC 应用程序API的组成</h3><h4 id="java-sql"><a href="#java-sql" class="headerlink" title="java.sql"></a>java.sql</h4><ul>
-<li>DriverManager: 加载驱动，创建连接</li>
-<li>Connection: 代表数据库连接，通过它可以创建Statement, PreparedStatement, CallableStatement 对象.</li>
-<li>Statement,PreparedStatement , CallableStatement </li>
-<li>ResultSet: SELECT 语句的结果集</li>
-<li>SQLException: 异常和错误</li>
-</ul>
-<p><img src="http://ost1popse.bkt.clouddn.com/aaa.png" alt="DBCarchitectureinanutshell"></p>
-<h4 id="javax-sql"><a href="#javax-sql" class="headerlink" title="javax.sql"></a>javax.sql</h4><ul>
-<li>DataSource</li>
-<li>Connection Pool</li>
-<li>Distributed transactions</li>
-<li>Row Sets</li>
-</ul>
-<h3 id="JDBC核心类／接口"><a href="#JDBC核心类／接口" class="headerlink" title="JDBC核心类／接口"></a>JDBC核心类／接口</h3><p><img src="http://ost1popse.bkt.clouddn.com/bbb.png" alt="core classes/interfaces"></p>
-
+        
       
 
       
