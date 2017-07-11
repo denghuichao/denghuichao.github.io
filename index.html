@@ -158,19 +158,19 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-JDBC简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Install ES in ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/JDBC简介/">JDBC简介</a>
+      <a class="article-title" href="/2017/07/09/Install ES in ubuntu/">Ubuntu 16 安装 ElasticSearch</a>
     </h1>
   
 
         
-        <a href="/2017/07/09/JDBC简介/" class="archive-article-date">
+        <a href="/2017/07/09/Install ES in ubuntu/" class="archive-article-date">
   	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
 </a>
         
@@ -178,8 +178,29 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JDCB是什么"><a href="#JDCB是什么" class="headerlink" title="JDCB是什么"></a>JDCB是什么</h3><p>平台无关的JAVA和关系型数据库的接口</p>
-        
+        <h2 id="Install-ES-in-ubuntu"><a href="#Install-ES-in-ubuntu" class="headerlink" title="Install ES in ubuntu"></a>Install ES in ubuntu</h2><ul>
+<li>wget -qO - <a href="https://packages.elastic.co/GPG-KEY-elasticsearch" target="_blank" rel="external">https://packages.elastic.co/GPG-KEY-elasticsearch</a> | sudo apt-key add -</li>
+<li>echo “deb <a href="https://packages.elastic.co/elasticsearch/2.x/debian" target="_blank" rel="external">https://packages.elastic.co/elasticsearch/2.x/debian</a> stable main” | sudo tee -a /etc/apt/sources.list.d/elasticsearch.list</li>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install -y elasticsearch</li>
+</ul>
+<h2 id="start-ES-in-ubuntu"><a href="#start-ES-in-ubuntu" class="headerlink" title="start ES in ubuntu"></a>start ES in ubuntu</h2><ul>
+<li>sudo systemctl daemon-reload</li>
+<li>sudo systemctl enable elasticsearch.service</li>
+<li>sudo systemctl start elasticsearch.service</li>
+<li>curl -X GET <a href="http://localhost:9200" target="_blank" rel="external">http://localhost:9200</a></li>
+</ul>
+<h2 id="Install-Kibana-in-Ubuntu"><a href="#Install-Kibana-in-Ubuntu" class="headerlink" title="Install Kibana in Ubuntu"></a>Install Kibana in Ubuntu</h2><ul>
+<li>wget -qO - <a href="https://packages.elastic.co/GPG-KEY-elasticsearch" target="_blank" rel="external">https://packages.elastic.co/GPG-KEY-elasticsearch</a> | sudo apt-key add -</li>
+<li>echo “deb <a href="http://packages.elastic.co/kibana/4.5/debian" target="_blank" rel="external">http://packages.elastic.co/kibana/4.5/debian</a> stable main” | sudo tee -a /etc/apt/sources.list</li>
+<li>sudo apt-get update &amp;&amp; sudo apt-get install kibana</li>
+</ul>
+<h2 id="Start-Kabana"><a href="#Start-Kabana" class="headerlink" title="Start Kabana"></a>Start Kabana</h2><ul>
+<li>sudo systemctl start kibana</li>
+<li>sudo systemctl enable kibana</li>
+<li><a href="http://localhost:5601/" target="_blank" rel="external">http://localhost:5601/</a></li>
+</ul>
+
       
 
       
@@ -192,15 +213,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -210,7 +231,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/JDBC简介/">more >></a>
+          <a class="article-more-a" href="/2017/07/09/Install ES in ubuntu/">more >></a>
         </p>
       
 
@@ -290,6 +311,73 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/09/写在开博后/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-JDBC简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/09/JDBC简介/">JDBC简介</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/09/JDBC简介/" class="archive-article-date">
+  	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JDCB是什么"><a href="#JDCB是什么" class="headerlink" title="JDCB是什么"></a>JDCB是什么</h3><p>平台无关的JAVA和关系型数据库的接口</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/09/JDBC简介/">more >></a>
         </p>
       
 

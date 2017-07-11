@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | hcdeng‘s blog</title>
+  <title>Ubuntu 16 安装 ElasticSearch | hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hcdeng‘s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="Install ES in ubuntu wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - echo “deb https://packages.elastic.co/elasticsearch/2.x/debian stable main” | sudo tee -a /etc/ap">
+<meta name="keywords" content="ElasticSearch,Ubuntu,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 16 安装 ElasticSearch">
+<meta property="og:url" content="http://yoursite.com/2017/07/09/Install ES in ubuntu/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
+<meta property="og:description" content="Install ES in ubuntu wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - echo “deb https://packages.elastic.co/elasticsearch/2.x/debian stable main” | sudo tee -a /etc/ap">
+<meta property="og:updated_time" content="2017-07-11T15:15:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hcdeng‘s blog">
+<meta name="twitter:title" content="Ubuntu 16 安装 ElasticSearch">
+<meta name="twitter:description" content="Install ES in ubuntu wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - echo “deb https://packages.elastic.co/elasticsearch/2.x/debian stable main” | sudo tee -a /etc/ap">
   
     <link rel="alternative" href="/atom.xml" title="hcdeng‘s blog" type="application/atom+xml">
   
@@ -156,36 +161,87 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Install ES in ubuntu" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/09/Install ES in ubuntu/" class="archive-article-date">
-  	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/09/Install ES in ubuntu/">Ubuntu 16 安装 ElasticSearch</a>
+    <h1 class="article-title" itemprop="name">
+      Ubuntu 16 安装 ElasticSearch
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/09/Install ES in ubuntu/" class="archive-article-date">
+  	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Install-ES-in-ubuntu"><a href="#Install-ES-in-ubuntu" class="headerlink" title="Install ES in ubuntu"></a>Install ES in ubuntu</h2><ul>
+<li>wget -qO - <a href="https://packages.elastic.co/GPG-KEY-elasticsearch" target="_blank" rel="external">https://packages.elastic.co/GPG-KEY-elasticsearch</a> | sudo apt-key add -</li>
+<li>echo “deb <a href="https://packages.elastic.co/elasticsearch/2.x/debian" target="_blank" rel="external">https://packages.elastic.co/elasticsearch/2.x/debian</a> stable main” | sudo tee -a /etc/apt/sources.list.d/elasticsearch.list</li>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install -y elasticsearch</li>
+</ul>
+<h2 id="start-ES-in-ubuntu"><a href="#start-ES-in-ubuntu" class="headerlink" title="start ES in ubuntu"></a>start ES in ubuntu</h2><ul>
+<li>sudo systemctl daemon-reload</li>
+<li>sudo systemctl enable elasticsearch.service</li>
+<li>sudo systemctl start elasticsearch.service</li>
+<li>curl -X GET <a href="http://localhost:9200" target="_blank" rel="external">http://localhost:9200</a></li>
+</ul>
+<h2 id="Install-Kibana-in-Ubuntu"><a href="#Install-Kibana-in-Ubuntu" class="headerlink" title="Install Kibana in Ubuntu"></a>Install Kibana in Ubuntu</h2><ul>
+<li>wget -qO - <a href="https://packages.elastic.co/GPG-KEY-elasticsearch" target="_blank" rel="external">https://packages.elastic.co/GPG-KEY-elasticsearch</a> | sudo apt-key add -</li>
+<li>echo “deb <a href="http://packages.elastic.co/kibana/4.5/debian" target="_blank" rel="external">http://packages.elastic.co/kibana/4.5/debian</a> stable main” | sudo tee -a /etc/apt/sources.list</li>
+<li>sudo apt-get update &amp;&amp; sudo apt-get install kibana</li>
+</ul>
+<h2 id="Start-Kabana"><a href="#Start-Kabana" class="headerlink" title="Start Kabana"></a>Start Kabana</h2><ul>
+<li>sudo systemctl start kibana</li>
+<li>sudo systemctl enable kibana</li>
+<li><a href="http://localhost:5601/" target="_blank" rel="external">http://localhost:5601/</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -205,157 +261,89 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/09/Install ES in ubuntu/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/09/写在开博后/" class="archive-article-date">
-  	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/09/写在开博后/">开博第一天</a>
-    </h1>
+  
+    <a href="/2017/07/09/写在开博后/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开博第一天</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/09/JDBC简介/" class="archive-article-date">
-  	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/09/JDBC简介/">JDBC简介</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/08/用java写个爬虫IP代理池/" class="archive-article-date">
-  	<time datetime="2017-07-08T03:21:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/08/用java写个爬虫IP代理池/">用Java写个爬虫IP代理池</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Proxy Pool</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -384,8 +372,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
