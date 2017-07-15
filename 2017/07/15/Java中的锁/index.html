@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java中的锁 | hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好   Lock接口使用方式Lock lock = new ReentrantLock()">
+  <meta name="description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好">
 <meta name="keywords" content="Java,锁,并发编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中的锁">
 <meta property="og:url" content="http://yoursite.com/2017/07/15/Java中的锁/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
-<meta property="og:description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好   Lock接口使用方式Lock lock = new ReentrantLock()">
-<meta property="og:updated_time" content="2017-07-15T15:36:09.000Z">
+<meta property="og:description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好">
+<meta property="og:updated_time" content="2017-07-15T15:37:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的锁">
-<meta name="twitter:description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好   Lock接口使用方式Lock lock = new ReentrantLock()">
+<meta name="twitter:description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好">
   
     <link rel="alternative" href="/atom.xml" title="hcdeng‘s blog" type="application/atom+xml">
   
@@ -188,6 +188,7 @@ var _hmt = _hmt || [];
 <li>简化同步的管理</li>
 <li>可扩展性没有显式锁好 </li>
 </ul>
+<a id="more"></a>
 <h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><pre><code>Lock lock = new ReentrantLock();
 lock.lock();
 try{
