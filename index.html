@@ -158,6 +158,210 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中的锁" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/15/Java中的锁/">Java中的锁</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/15/Java中的锁/" class="archive-article-date">
+  	<time datetime="2017-07-15T15:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="锁的作用"><a href="#锁的作用" class="headerlink" title="锁的作用"></a>锁的作用</h3><p>控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。</p>
+<h3 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h3><ul>
+<li>隐式获取锁</li>
+<li>锁的获取和释放固化</li>
+<li>简化同步的管理</li>
+<li>可扩展性没有显式锁好 </li>
+</ul>
+<h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><h4 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h4><pre><code>Lock lock = new ReentrantLock();
+lock.lock();
+try{
+      //todo ...
+    } finally {
+      lock.unlock();
+ }
+</code></pre><ul>
+<li>不要将获取锁的代码放在try里面</li>
+<li>在finally块中释放锁，保证锁最终都能释放</li>
+</ul>
+<h4 id="区别synchronized的主要特性"><a href="#区别synchronized的主要特性" class="headerlink" title="区别synchronized的主要特性"></a>区别synchronized的主要特性</h4><ul>
+<li>尝试非阻塞的获取锁</li>
+<li>能被中断地获取锁</li>
+<li>超时获取锁</li>
+</ul>
+<h3 id="队列同步器（AQS）"><a href="#队列同步器（AQS）" class="headerlink" title="队列同步器（AQS）"></a>队列同步器（AQS）</h3><p><code>AbstractQueuedSynchronizer</code> 是构建锁和其他同步组件的基本框架，使用一个int成员表示同步状态，用一个FIFO表示共享资源获取线程的排队。使用AQS的主要方式是通过继承，子类通过继承AQS并实现器抽象方法来管理同步状态。</p>
+<p>通过getState(), setState(int newState),compareAndSetState(int expect, int update)方法来获取和修改同步状态。<br>AQS是实现锁合其他同步组件的关键，在锁的实现中都聚合了AQS，并利用AQS实现锁的语意。</p>
+<ul>
+<li>锁： 面向使用者，隐藏实现细节</li>
+<li>AQS：面向锁的实现者，简化锁的实现，屏蔽同步状态管理、线程排队、等待、唤醒等底层操作</li>
+<li>锁和AQS隔离了使用者何实现者各自关注的领域</li>
+</ul>
+<h3 id="AQS的接口"><a href="#AQS的接口" class="headerlink" title="AQS的接口"></a>AQS的接口</h3><p>AQS采用模板方法模式设计。使用者继承AQS并重写指定方法，然后在同步组件的实现中组合AQS实现，调用AQS的模板方法，而模板方法最终调用实现者重写的方法。</p>
+<p>使用getState(), setState(int newState),compareAndSetState(int expect, int update)方法来获取和修改同步状态。</p>
+<p>可重写的方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proected boolean tryAcquire(int arg)</td>
+<td>独占式获取同步状态，CAS操作</td>
+</tr>
+<tr>
+<td>proected boolean tryRelease(int arg)</td>
+<td>独占式释放同步状态</td>
+</tr>
+<tr>
+<td>proected int tryAcquireShared(int arg)</td>
+<td>共享式获取同步状态，返回值大于0表示成功</td>
+</tr>
+<tr>
+<td>proected boolean tryRelease(int arg)</td>
+<td>共享式释放同步状态</td>
+</tr>
+<tr>
+<td>proected boolean isHeldExclisively()</td>
+<td>表示同步器是否被线程独占</td>
+</tr>
+</tbody>
+</table>
+<h3 id="AQS模板方法"><a href="#AQS模板方法" class="headerlink" title="AQS模板方法"></a>AQS模板方法</h3><p>AQS模板方法分为三类：</p>
+<ul>
+<li>独占式获取和释放同步状态</li>
+<li>共享式获取和释放同步状态</li>
+<li>查询队列中等待线程的情况</li>
+</ul>
+<h3 id="AQS底层细节"><a href="#AQS底层细节" class="headerlink" title="AQS底层细节"></a>AQS底层细节</h3><h4 id="同步队列"><a href="#同步队列" class="headerlink" title="同步队列"></a>同步队列</h4><p>AQS的内部实现一类一个FIFO同步队列来管理线程对同步状态的管理。当线程获取同步状态失败时，AQS将其封装成一个Node并放入FIFO，同时阻塞该线程。当同步状态被释放时，在唤醒阻塞的线程，使其能够再次尝试获取。</p>
+<p>Node结构定义：<br>| 属性 | 描述|<br>|——–|———|<br>|int waitStatus|等待状态：CANCELED，SIGNAL，CONDITION，PROPAGATE，INITIAL|<br>|Node prev|前驱节点|<br>|Node next|后继节点|<br>|Node nextWaiter|等待队列中的后继节点|<br>|Thread thread|获取同步状态的线程|</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/15/Java中的锁/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-JDBC简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/09/JDBC简介/">JDBC简介</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/09/JDBC简介/" class="archive-article-date">
+  	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JDCB是什么"><a href="#JDCB是什么" class="headerlink" title="JDCB是什么"></a>JDCB是什么</h3><p>平台无关的JAVA和关系型数据库的接口</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/09/JDBC简介/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Install ES in ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -232,73 +436,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/09/Install ES in ubuntu/">more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-JDBC简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/JDBC简介/">JDBC简介</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/09/JDBC简介/" class="archive-article-date">
-  	<time datetime="2017-07-09T02:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JDCB是什么"><a href="#JDCB是什么" class="headerlink" title="JDCB是什么"></a>JDCB是什么</h3><p>平台无关的JAVA和关系型数据库的接口</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/09/JDBC简介/">more >></a>
         </p>
       
 
