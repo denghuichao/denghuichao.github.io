@@ -15,10 +15,15 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/15/Java中的锁/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
 <meta property="og:description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好">
-<meta property="og:updated_time" content="2017-07-15T15:39:51.000Z">
+<meta property="og:image" content="http://ost1popse.bkt.clouddn.com/sync_queue.png">
+<meta property="og:image" content="http://ost1popse.bkt.clouddn.com/acquire.png">
+<meta property="og:image" content="http://ost1popse.bkt.clouddn.com/gongxiang_duzhan.png">
+<meta property="og:image" content="http://ost1popse.bkt.clouddn.com/duzhanchaoshi.png">
+<meta property="og:updated_time" content="2017-07-16T02:11:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的锁">
 <meta name="twitter:description" content="锁的作用控制多个线程访问共享资源的方式，一般来说，锁防止多个线程同时访问共享资源（共享锁例外），Java5之前用synchronized关键字实现锁的功能，Java5后新增了Lock接口及其实现，提供了显式锁的功能。 synchronized 隐式获取锁 锁的获取和释放固化 简化同步的管理 可扩展性没有显式锁好">
+<meta name="twitter:image" content="http://ost1popse.bkt.clouddn.com/sync_queue.png">
   
     <link rel="alternative" href="/atom.xml" title="hcdeng‘s blog" type="application/atom+xml">
   
@@ -283,6 +288,18 @@ try{
 </tr>
 </tbody>
 </table>
+<p>同步队列的结构：</p>
+<p><img src="http://ost1popse.bkt.clouddn.com/sync_queue.png" alt="sync-queue"></p>
+<p>一个线程尝试获取同步状态失败后，将加入同步队列，即构造节点加入队列尾部，加入队尾需要同步，因此通过一个CAS方法进行。</p>
+<p>首节点获取同步状态成功的节点，当它释放同步状态后，将会唤醒其后继节点，后继节点在获取同步状态成功后将自己设为头节点。因此设置头节点的动作只是由获取同步状态成功的线程，因此不需要同步的CAS操作。</p>
+<h4 id="独占同步状态获取和释放"><a href="#独占同步状态获取和释放" class="headerlink" title="独占同步状态获取和释放"></a>独占同步状态获取和释放</h4><p>调用AQS的acquire(int arg)方法获取同步状态，该方法对中断不敏感，当线程获取同步状态失败加入同步队列后，如果对它进行中断操作，线程不会从同步队列移除。</p>
+<p><img src="http://ost1popse.bkt.clouddn.com/acquire.png" alt="acquire"></p>
+<p>调用release方法释放同步状态。当前线程释放同步状态后，会唤醒后继线程。</p>
+<h4 id="共享式同步状态获取和释放"><a href="#共享式同步状态获取和释放" class="headerlink" title="共享式同步状态获取和释放"></a>共享式同步状态获取和释放</h4><p>共享式和独占式同步状态获取的主要区别在于是否允许多个线程同时获取到同步状态。比如说写文件要求线程独占访问，读文件则可以共享访问。</p>
+<p>共享式和独占式对比:<br><img src="http://ost1popse.bkt.clouddn.com/gongxiang_duzhan.png" alt="http://ost1popse.bkt.clouddn.com/gongxiang_duzhan.png"></p>
+<p>共享式同步状态获取调用acqiureShared(int arg)方法，该方法返回大于0表示成功。</p>
+<h4 id="独占式超时获取同步状态"><a href="#独占式超时获取同步状态" class="headerlink" title="独占式超时获取同步状态"></a>独占式超时获取同步状态</h4><p>调用AQS的doAcquireNanos(int arg, long timeout).在Java5之前，如果一个线程因为获取不到锁而阻塞在synchronized处，此时对线程进行中断，那么其中断状态会被修改，但是现场依然阻塞在synchronized处。而Java5的AQS增加了acqureInterruptly方法，如果获取同步状态过程中被中断，则抛出InterruptedException。超时获取同步状态则是在此基础上的增强版。</p>
+<p>独占式超时获取同步状态流程：<br><img src="http://ost1popse.bkt.clouddn.com/duzhanchaoshi.png" alt="http://ost1popse.bkt.clouddn.com/duzhanchaoshi.png"></p>
 
       
 
