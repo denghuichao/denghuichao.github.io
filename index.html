@@ -158,6 +158,150 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-垃圾收集器和内存分配策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/23/垃圾收集器和内存分配策略/">垃圾收集器和内存分配策略</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/23/垃圾收集器和内存分配策略/" class="archive-article-date">
+  	<time datetime="2017-07-23T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="对象存活判断"><a href="#对象存活判断" class="headerlink" title="对象存活判断"></a>对象存活判断</h3><h4 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h4><ul>
+<li>简单、高效</li>
+<li>无法解决循环引用问题</li>
+</ul>
+<h4 id="可达性分析"><a href="#可达性分析" class="headerlink" title="可达性分析"></a>可达性分析</h4><p><img src="http://ost1popse.bkt.clouddn.com/gcroots.png" alt="http://ost1popse.bkt.clouddn.com/gcroots.png"></p>
+<ul>
+<li><p>可作为GC Root的对象：</p>
+<ul>
+<li>虚拟机栈（栈帧中的本地变量表）中引用的对象</li>
+<li>方法区中类静态属性引用的对象</li>
+<li>方法区常量引用的对象</li>
+<li>JNI引用的对象</li>
+</ul>
+</li>
+<li><p>Java引用类型</p>
+<ul>
+<li>Strong Reference ： Object o = new Object(),只要强引用还在就不会被回收</li>
+<li>Soft Reference ： 内存溢出之前会进行回收</li>
+<li>Weak Reference ： 只能存活到下次垃圾回收之前</li>
+<li>Phantom Reference ： 无法通过虚引用获取对象实例， 存在的唯一目的是对象回收之前收到一个系统通知</li>
+</ul>
+</li>
+<li><p>对象的存亡</p>
+<ul>
+<li>可达性分析判定不可达</li>
+<li>执行筛选是否有必要执行finalize()方法</li>
+<li>如果必要执行，将对象放入F-Queue队列，由一个低优先级Finalizer线程执行</li>
+<li>finalize方法只会执行一次</li>
+</ul>
+</li>
+</ul>
+<h3 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h3><h4 id="标记-清除算法-Mark-Sweep"><a href="#标记-清除算法-Mark-Sweep" class="headerlink" title="标记-清除算法 Mark-Sweep"></a>标记-清除算法 Mark-Sweep</h4><ul>
+<li>很多其他算法都是在此基础改进</li>
+<li>标记和清除效率都不高</li>
+<li>内存碎片问题，碎片太多容易触发另一次GC</li>
+</ul>
+<h4 id="复制算法-Copying"><a href="#复制算法-Copying" class="headerlink" title="复制算法 Copying"></a>复制算法 Copying</h4><ul>
+<li>内存容量分为两块同样大小，每次使用一块</li>
+<li>回收时将使用的一块内存中存活对象复制到另一块，并将其空间一次性清除</li>
+<li>只能使用一般空间，代价过高</li>
+<li>实际划为Eden + Survivor1 + Survivor2， HotSpot默认8:1:1</li>
+<li>Survivor空间不够进行分配担保（Handle Promotion），由老年代来担保</li>
+</ul>
+<h4 id="标记-整理算法-Mark-Compact"><a href="#标记-整理算法-Mark-Compact" class="headerlink" title="标记-整理算法 Mark-Compact"></a>标记-整理算法 Mark-Compact</h4><ul>
+<li>Copying算法在对象存活率高时需要较多复制操作，效率变低，需要分配担保，不适合老年代</li>
+<li>先标记，然后存活对象向一端移动，然后清楚断边界以外区域</li>
+</ul>
+<h4 id="分代收集-Generational-Collection"><a href="#分代收集-Generational-Collection" class="headerlink" title="分代收集 Generational Collection"></a>分代收集 Generational Collection</h4><ul>
+<li>把堆分为新生代和老年代</li>
+<li>根据各个年代特点选择合适回收算法</li>
+<li>新生代：存活率低-&gt;Copying</li>
+<li>老年代：存活率高，而且没人替他担保-&gt;Mark-Sweep或者Mark-Compact</li>
+</ul>
+<h3 id="HotSpot算法实现"><a href="#HotSpot算法实现" class="headerlink" title="HotSpot算法实现"></a>HotSpot算法实现</h3><h4 id="枚举跟节点"><a href="#枚举跟节点" class="headerlink" title="枚举跟节点"></a>枚举跟节点</h4><ul>
+<li>GC Root主要为全局性引用(常量、静态熟悉)和执行上下文(局部变量表)</li>
+<li>GC停顿，必须在确保一致性的快照中执行(Stop The World)</li>
+<li>OopMap记录哪些地方存在引用</li>
+</ul>
+<h4 id="安全点-Safe-Point"><a href="#安全点-Safe-Point" class="headerlink" title="安全点 Safe Point"></a>安全点 Safe Point</h4><ul>
+<li>导致OopMap内容变化的指令太多，生成OopMap空间成本高，其实是只需要在特定位置记录这些信息（Safe Point）</li>
+<li>安全点有哪些？<ul>
+<li>循环的末尾 </li>
+<li>方法临返回前 / 调用方法的call指令后 </li>
+<li>可能抛异常的位置 </li>
+</ul>
+</li>
+</ul>
+<h4 id="安全区域-Safe-Region"><a href="#安全区域-Safe-Region" class="headerlink" title="安全区域 Safe Region"></a>安全区域 Safe Region</h4><ul>
+<li>Safe Point无法解决程序不执行（Sleep， Blocked）状态下进入GC的问题，此时线程无法响应JVM中断。</li>
+<li>在Safe Region中引用关系不会发生变化，在此区域GC都是安全的</li>
+<li>线程执行到Safe Region中的代码时，标示自己进入了Safe Region</li>
+<li>JVM 发生GC时，不需要管标示自己进入Safe Region的线程</li>
+<li>线程离开Safe Region前先检查GC是否完成，若否，则等待完成才能离开Safe Region</li>
+</ul>
+<h4 id="OopMap解释"><a href="#OopMap解释" class="headerlink" title="OopMap解释"></a>OopMap解释</h4><p>OopMap 记录了栈上本地变量到堆上对象的引用关系。其作用是：垃圾收集时，收集线程会对栈上的内存进行扫描，看看哪些位置存储了 Reference 类型。如果发现某个位置确实存的是 Reference 类型，就意味着它所引用的对象这一次不能被回收。但问题是，栈上的本地变量表里面只有一部分数据是 Reference 类型的（它们是我们所需要的），那些非 Reference 类型的数据对我们而言毫无用处，但我们还是不得不对整个栈全部扫描一遍，这是对时间和资源的一种浪费。 </p>
+<p>一个很自然的想法是，能不能用空间换时间，在某个时候把栈上代表引用的位置全部记录下来，这样到真正 gc 的时候就可以直接读取，而不用再一点一点的扫描了。事实上，大部分主流的虚拟机也正是这么做的，比如 HotSpot ，它使用一种叫做 OopMap 的数据结构来记录这类信息。 </p>
+<p>我们知道，一个线程意味着一个栈，一个栈由多个栈帧组成，一个栈帧对应着一个方法，一个方法里面可能有多个安全点。 gc 发生时，程序首先运行到最近的一个安全点停下来，然后更新自己的 OopMap ，记下栈上哪些位置代表着引用。枚举根节点时，递归遍历每个栈帧的 OopMap ，通过栈中记录的被引用对象的内存地址，即可找到这些对象（ GC Roots ）。</p>
+<p>通过上面的解释，我们可以很清楚的看到使用 OopMap 可以避免全栈扫描，加快枚举根节点的速度。但这并不是它的全部用意。它的另外一个更根本的作用是，可以帮助 HotSpot 实现准确式 GC 。 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JVM读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/23/垃圾收集器和内存分配策略/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Java运行时数据区域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
