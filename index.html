@@ -182,15 +182,13 @@ var _hmt = _hmt || [];
 <li>简单、高效</li>
 <li>无法解决循环引用问题</li>
 </ul>
-<h4 id="可达性分析"><a href="#可达性分析" class="headerlink" title="可达性分析"></a>可达性分析</h4><p><img src="http://ost1popse.bkt.clouddn.com/gcroots.png" alt="http://ost1popse.bkt.clouddn.com/gcroots.png"></p>
+<h4 id="可达性分析"><a href="#可达性分析" class="headerlink" title="可达性分析"></a>可达性分析</h4><ul>
+<li><p>可作为GC Root的对象：</p>
 <ul>
-<li>可作为GC Root的对象：<ul>
 <li>虚拟机栈（栈帧中的本地变量表）中引用的对象</li>
 <li>方法区中类静态属性引用的对象</li>
 <li>方法区常量引用的对象</li>
 <li>JNI引用的对象</li>
-</ul>
-</li>
 </ul>
         
       
