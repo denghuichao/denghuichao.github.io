@@ -17,7 +17,7 @@
 <meta property="og:description" content="Java运行时数据区域程序计数器 字节码解释器工作时通过改变这个计数器的值来选取下一条要执行的字节码指令。 分支、循环、跳转、异常处理、线程恢复等基础功能的实现依赖该计数器 线程私有 唯一一个没有规定任何OOM的区域  Java虚拟机栈 线程私有 描述Java方法执行的内存模型，方法执行时创建栈帧(Stack Frame)保存局部变量表，操作数栈、动态链接、方法出口信息。 局部变量表存放编译器可知">
 <meta property="og:image" content="http://ost1popse.bkt.clouddn.com/jubing.png">
 <meta property="og:image" content="http://ost1popse.bkt.clouddn.com/zhizheng.png">
-<meta property="og:updated_time" content="2017-07-22T16:21:52.000Z">
+<meta property="og:updated_time" content="2017-07-22T16:23:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java运行时内存区域和OOM">
 <meta name="twitter:description" content="Java运行时数据区域程序计数器 字节码解释器工作时通过改变这个计数器的值来选取下一条要执行的字节码指令。 分支、循环、跳转、异常处理、线程恢复等基础功能的实现依赖该计数器 线程私有 唯一一个没有规定任何OOM的区域  Java虚拟机栈 线程私有 描述Java方法执行的内存模型，方法执行时创建栈帧(Stack Frame)保存局部变量表，操作数栈、动态链接、方法出口信息。 局部变量表存放编译器可知">
@@ -197,6 +197,7 @@ var _hmt = _hmt || [];
 <li>进入一个方法时，栈帧大小完全确定，运行时不会改变</li>
 <li>虚拟机栈可能抛出StackOverflowError和OutOfMemoryError</li>
 </ul>
+<a id="more"></a>
 <h4 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h4><ul>
 <li>和虚拟机栈类型，不同的是它为执行Native方法服务</li>
 </ul>
