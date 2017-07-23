@@ -158,6 +158,78 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-内存分配与回收策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/23/内存分配与回收策略/">内存分配与回收策略</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/23/内存分配与回收策略/" class="archive-article-date">
+  	<time datetime="2017-07-23T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>堆上分配，主要在新生代的Eden区，如果开启了本地线程分配缓冲，将按线程优先在TLAB上分配</strong></p>
+<h3 id="对象优先在Eden区分配"><a href="#对象优先在Eden区分配" class="headerlink" title="对象优先在Eden区分配"></a>对象优先在Eden区分配</h3><p>对象优先在Eden区分配，Eden区没有足够空间时，虚拟机发起一次<strong>Minor GC</strong></p>
+<ul>
+<li><strong>Minor GC</strong> 频繁，速度快</li>
+<li><strong>Major GC / Full GC</strong> 非常慢</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JVM读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/23/内存分配与回收策略/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-垃圾收集器和内存分配策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
