@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>内存分配与回收策略 | hcdeng‘s blog</title>
+  <title>用Java写个爬虫IP代理池 | hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="堆上分配，主要在新生代的Eden区，如果开启了本地线程分配缓冲，将按线程优先在TLAB上分配 对象优先在Eden区分配对象优先在Eden区分配，Eden区没有足够空间时，虚拟机发起一次Minor GC  Minor GC 频繁，速度快 Major GC / Full GC 非常慢">
-<meta name="keywords" content="Java,JVM,JVM读书笔记">
+  <meta name="description" content="##这个博客不错，有空看看http://www.jianshu.com/p/4a41ee88bd82?from=jiantop.com">
+<meta name="keywords" content="Java,读书">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内存分配与回收策略">
-<meta property="og:url" content="http://yoursite.com/2017/07/23/内存分配与回收策略/index.html">
+<meta property="og:title" content="用Java写个爬虫IP代理池">
+<meta property="og:url" content="http://yoursite.com/2017/07/29/goodblog/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
-<meta property="og:description" content="堆上分配，主要在新生代的Eden区，如果开启了本地线程分配缓冲，将按线程优先在TLAB上分配 对象优先在Eden区分配对象优先在Eden区分配，Eden区没有足够空间时，虚拟机发起一次Minor GC  Minor GC 频繁，速度快 Major GC / Full GC 非常慢">
-<meta property="og:updated_time" content="2017-07-23T06:26:14.000Z">
+<meta property="og:description" content="##这个博客不错，有空看看http://www.jianshu.com/p/4a41ee88bd82?from=jiantop.com">
+<meta property="og:updated_time" content="2017-07-29T16:32:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="内存分配与回收策略">
-<meta name="twitter:description" content="堆上分配，主要在新生代的Eden区，如果开启了本地线程分配缓冲，将按线程优先在TLAB上分配 对象优先在Eden区分配对象优先在Eden区分配，Eden区没有足够空间时，虚拟机发起一次Minor GC  Minor GC 频繁，速度快 Major GC / Full GC 非常慢">
+<meta name="twitter:title" content="用Java写个爬虫IP代理池">
+<meta name="twitter:description" content="##这个博客不错，有空看看http://www.jianshu.com/p/4a41ee88bd82?from=jiantop.com">
   
     <link rel="alternative" href="/atom.xml" title="hcdeng‘s blog" type="application/atom+xml">
   
@@ -161,44 +161,27 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-内存分配与回收策略" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-goodblog" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      内存分配与回收策略
+      用Java写个爬虫IP代理池
     </h1>
   
 
         
-        <a href="/2017/07/23/内存分配与回收策略/" class="archive-article-date">
-  	<time datetime="2017-07-23T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
+        <a href="/2017/07/29/goodblog/" class="archive-article-date">
+  	<time datetime="2017-07-28T16:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>堆上分配，主要在新生代的Eden区，如果开启了本地线程分配缓冲，将按线程优先在TLAB上分配</strong></p>
-<h3 id="对象优先在Eden区分配"><a href="#对象优先在Eden区分配" class="headerlink" title="对象优先在Eden区分配"></a>对象优先在Eden区分配</h3><p>对象优先在Eden区分配，Eden区没有足够空间时，虚拟机发起一次<strong>Minor GC</strong></p>
-<ul>
-<li><strong>Minor GC</strong> 频繁，速度快</li>
-<li><strong>Major GC / Full GC</strong> 非常慢</li>
-</ul>
-<a id="more"></a>
-<h3 id="大对象进入老年代"><a href="#大对象进入老年代" class="headerlink" title="大对象进入老年代"></a>大对象进入老年代</h3><ul>
-<li>大量连续的内存空间</li>
-<li>很长的字符串、大数组</li>
-<li><strong>XX:PretenureSizeThreshold</strong>, 大于该值的对象直接进老年代，避免灾Eden和两个Survivor区发生大量内存复制</li>
-</ul>
-<h3 id="长期存活的对象进入老年代"><a href="#长期存活的对象进入老年代" class="headerlink" title="长期存活的对象进入老年代"></a>长期存活的对象进入老年代</h3><p><strong>对象在Survivor区每熬过一次Minor GC， 年龄加一，当它的年龄达到一定程度(默认15)，将晋升到老年代</strong></p>
-<ul>
-<li>-XX:MaxTenuringThreshold</li>
-</ul>
-<h3 id="动态对象年龄判定"><a href="#动态对象年龄判定" class="headerlink" title="动态对象年龄判定"></a>动态对象年龄判定</h3><p>虚拟机并不是永远要求对象年龄必须达到MaxTenuringThreshold才进入老年代。如果Survivor空间相同年龄所有对象大小的总和超过Survivor的一半，那么年龄大于等于它的对象可以直接进入老年代。</p>
-<h3 id="空间分配担保"><a href="#空间分配担保" class="headerlink" title="空间分配担保"></a>空间分配担保</h3><p>在发生Minor GC之前，虚拟机会先检查老年代最大可用的连续空间是否大于新生代所有对象总空间，如果这个条件成立，那么Minor GC可以确保是安全的。如果不成立，则虚拟机会查看HandlePromotionFailure设置值是否允许担保失败。如果允许，那么会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于，将尝试进行一次Minor GC，尽管这次Minor GC是有风险的；如果小于或者HandlePromotionFailure设置为不允许冒险，那这时也要改为进行一次Full GC.                                                                                                                                         </p>
+        <p>##这个博客不错，有空看看<br><a href="http://www.jianshu.com/p/4a41ee88bd82?from=jiantop.com" target="_blank" rel="external">http://www.jianshu.com/p/4a41ee88bd82?from=jiantop.com</a></p>
 
       
 
@@ -247,11 +230,7 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JVM读书笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
         		</li>
       		
 		</ul>
@@ -307,7 +286,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/23/内存分配与回收策略/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/29/goodblog/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +300,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/07/29/goodblog/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用Java写个爬虫IP代理池
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/23/垃圾收集器和内存分配策略/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">垃圾收集器和内存分配策略</div>
+    <a href="/2017/07/23/内存分配与回收策略/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">内存分配与回收策略</div>
       <i class="icon-circle-right"></i>
     </a>
   
