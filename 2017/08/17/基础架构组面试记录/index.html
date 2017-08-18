@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>基础架构组面试记录 | hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术一面 什么是线程安全，Java为什么有线程安全的问题，怎么解决线程安全问题？ Volatile和Synchronize关键字的实现原理，什么是Happens before原则？ JVM的内存模型是什么样的，你能说一说吗？ Java线程的内存模型， 线程和进程的区别(内存上的区别)？ Java运行时内存分成哪些区，哪些区域可能发生OOM？如果你的程序出现OOM，你怎么排查？ TreeMap，Ha">
+  <meta name="description" content="技术一面 什么是线程安全，Java为什么有线程安全的问题，怎么解决线程安全问题？ Volatile和Synchronize关键字的实现原理，什么是Happens before原则？ JVM的内存模型是什么样的，你能说一说吗？ Java线程的内存模型， 线程和进程的区别(内存上的区别)？ 什么是内存屏障，它的原理是什么？ Java运行时内存分成哪些区，哪些区域可能发生OOM？如果你的程序出现OOM，">
 <meta name="keywords" content="Java,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础架构组面试记录">
 <meta property="og:url" content="http://yoursite.com/2017/08/17/基础架构组面试记录/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
-<meta property="og:description" content="技术一面 什么是线程安全，Java为什么有线程安全的问题，怎么解决线程安全问题？ Volatile和Synchronize关键字的实现原理，什么是Happens before原则？ JVM的内存模型是什么样的，你能说一说吗？ Java线程的内存模型， 线程和进程的区别(内存上的区别)？ Java运行时内存分成哪些区，哪些区域可能发生OOM？如果你的程序出现OOM，你怎么排查？ TreeMap，Ha">
-<meta property="og:updated_time" content="2017-08-18T00:18:26.000Z">
+<meta property="og:description" content="技术一面 什么是线程安全，Java为什么有线程安全的问题，怎么解决线程安全问题？ Volatile和Synchronize关键字的实现原理，什么是Happens before原则？ JVM的内存模型是什么样的，你能说一说吗？ Java线程的内存模型， 线程和进程的区别(内存上的区别)？ 什么是内存屏障，它的原理是什么？ Java运行时内存分成哪些区，哪些区域可能发生OOM？如果你的程序出现OOM，">
+<meta property="og:updated_time" content="2017-08-18T00:30:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础架构组面试记录">
-<meta name="twitter:description" content="技术一面 什么是线程安全，Java为什么有线程安全的问题，怎么解决线程安全问题？ Volatile和Synchronize关键字的实现原理，什么是Happens before原则？ JVM的内存模型是什么样的，你能说一说吗？ Java线程的内存模型， 线程和进程的区别(内存上的区别)？ Java运行时内存分成哪些区，哪些区域可能发生OOM？如果你的程序出现OOM，你怎么排查？ TreeMap，Ha">
+<meta name="twitter:description" content="技术一面 什么是线程安全，Java为什么有线程安全的问题，怎么解决线程安全问题？ Volatile和Synchronize关键字的实现原理，什么是Happens before原则？ JVM的内存模型是什么样的，你能说一说吗？ Java线程的内存模型， 线程和进程的区别(内存上的区别)？ 什么是内存屏障，它的原理是什么？ Java运行时内存分成哪些区，哪些区域可能发生OOM？如果你的程序出现OOM，">
   
     <link rel="alternative" href="/atom.xml" title="hcdeng‘s blog" type="application/atom+xml">
   
@@ -186,6 +186,7 @@ var _hmt = _hmt || [];
 <li>Volatile和Synchronize关键字的实现原理，什么是Happens before原则？</li>
 <li>JVM的内存模型是什么样的，你能说一说吗？</li>
 <li>Java线程的内存模型， 线程和进程的区别(内存上的区别)？</li>
+<li>什么是内存屏障，它的原理是什么？</li>
 <li>Java运行时内存分成哪些区，哪些区域可能发生OOM？如果你的程序出现OOM，你怎么排查？</li>
 <li>TreeMap，HashMap，LinkedHashMap，ConcurentHashMap的区别。</li>
 <li>在腾讯的实习经历，问当时的项目中redis主要用作什么场景？</li>
@@ -211,6 +212,7 @@ var _hmt = _hmt || [];
 <li>让你来实现RPC的负载均衡，你有哪些策略？</li>
 <li>TCP／UDP有什么区别？TCP建立连接需要三次握手而断开连接需要四次挥手，为什么断开连接要多一次挥手？</li>
 <li>Zookeeper用过吗，它主要用在什么场景，我举了个例子说RPC的服务发布和治理，然后问服务发布和治理怎么实现。</li>
+<li>用过哪些中间件，主要是用在哪些场景？其中重点又问了消息队列一般做什么用途，它的内部采用了什么样的储存机制？</li>
 <li>数据库索引的实现原理，采用了什么数据结构？</li>
 <li>你GitHub上面有好些项目，挑一个来讲讲？</li>
 <li>如果你来我们基础架构团队工作，你觉得会遇到哪些挑战？</li>
