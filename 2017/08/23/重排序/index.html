@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/23/重排序/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
 <meta property="og:description" content="重排序编译器和处理器为了优化程序性能而对指令序列进行重新排序的手段 数据依赖性两个操作访问同一个变量，且其中有一个为写操作。    名称 示例 说明     写后读 a = 1; b = a; 写一个变量后再读这个变量   写后写 a = 1; a = 2; 写一个变量后再写这个变量   读后写 a = b; b = 1; 读一个变量后，再写这个变量    有数据依赖性的操作重排序，会改变执行结果">
-<meta property="og:updated_time" content="2017-08-23T13:27:23.000Z">
+<meta property="og:updated_time" content="2017-08-23T15:44:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指令重排序">
 <meta name="twitter:description" content="重排序编译器和处理器为了优化程序性能而对指令序列进行重新排序的手段 数据依赖性两个操作访问同一个变量，且其中有一个为写操作。    名称 示例 说明     写后读 a = 1; b = a; 写一个变量后再读这个变量   写后写 a = 1; a = 2; 写一个变量后再写这个变量   读后写 a = b; b = 1; 读一个变量后，再写这个变量    有数据依赖性的操作重排序，会改变执行结果">
@@ -210,6 +210,7 @@ var _hmt = _hmt || [];
 </tbody>
 </table>
 <p>有数据依赖性的操作重排序，会改变执行结果。编译器和处理器在做重排序时，会遵守数据依赖性，不会改变<br>存在数据依赖性的两个操作的执行顺序。这里所说的数据依赖性仅针对单个处理器中执行的指令序列和单个线<br>程中执行的操作，不同处理器之间和不同线程之间的数据依赖性不被编译器和处理器考虑</p>
+<a id="more"></a>
 <h3 id="as-if-serial语义"><a href="#as-if-serial语义" class="headerlink" title="as-if-serial语义"></a>as-if-serial语义</h3><p>不管怎么重排序，单线程程序的执行结果不能被改变。编译器、处理器、runtime都遵守as-if-serial语义。</p>
 <h3 id="程序顺序规则"><a href="#程序顺序规则" class="headerlink" title="程序顺序规则"></a>程序顺序规则</h3><p>happens-before规则</p>
 <h3 id="重排序对多线程的影响"><a href="#重排序对多线程的影响" class="headerlink" title="重排序对多线程的影响"></a>重排序对多线程的影响</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReorderExample</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writer</span><span class="params">()</span> </span>&#123;</div><div class="line">            a = <span class="number">1</span>;               <span class="comment">// 1</span></div><div class="line">            flag = <span class="keyword">true</span>;        <span class="comment">// 2</span></div><div class="line">        &#125;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reader</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (flag) &#123;         <span class="comment">// 3</span></div><div class="line">                <span class="keyword">int</span> i = a * a;  <span class="comment">// 4</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>

@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/23/Volatile内存语义/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
 <meta property="og:description" content="锁的happens-before规则保证释放锁和获取锁的两个线程之间的内存可见性，这意味着对一个volatile变量的读，总是能看到（任意线程）对这个volatile变量最后的写入。 锁的语义决定了临界区代码的执行具有原子性。这意味着任何类型的volatile变量，对该变量的读写就具有原子性。如果是类似a++这种复合操作，这些操作整体上不具有原子性。 Volatile的主要特性 可见性。对一个vo">
-<meta property="og:updated_time" content="2017-08-23T15:41:29.000Z">
+<meta property="og:updated_time" content="2017-08-23T15:43:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Volatile的内存语义">
 <meta name="twitter:description" content="锁的happens-before规则保证释放锁和获取锁的两个线程之间的内存可见性，这意味着对一个volatile变量的读，总是能看到（任意线程）对这个volatile变量最后的写入。 锁的语义决定了临界区代码的执行具有原子性。这意味着任何类型的volatile变量，对该变量的读写就具有原子性。如果是类似a++这种复合操作，这些操作整体上不具有原子性。 Volatile的主要特性 可见性。对一个vo">
@@ -187,6 +187,7 @@ var _hmt = _hmt || [];
 <li><strong>可见性</strong>。对一个volatile变量的读，总是能看到（任意线程）对这个volatile变量最后的写<br>入。</li>
 <li><strong>原子性</strong>：对任意单个volatile变量的读/写具有原子性，但类似于volatile++这种复合操作不<br>具有原子性。</li>
 </ul>
+<a id="more"></a>
 <h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">VolatileExample</span> </span>&#123;</div><div class="line">       <span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">       <span class="keyword">volatile</span> <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writer</span><span class="params">()</span> </span>&#123;</div><div class="line">           a = <span class="number">1</span>;             <span class="comment">// 1</span></div><div class="line">           flag = <span class="keyword">true</span>;       <span class="comment">// 2</span></div><div class="line">       &#125;</div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reader</span><span class="params">()</span> </span>&#123;</div><div class="line">           <span class="keyword">if</span> (flag) &#123;       <span class="comment">// 3</span></div><div class="line">               <span class="keyword">int</span> i = a;    <span class="comment">// 4</span></div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
 <p><em>这里A线程写一个volatile变量后，B线程读同一个volatile变量。A线程在写volatile变量之<br>前所有可见的共享变量，在B线程读同一个volatile变量后，将立即变得对B线程可见。</em></p>
 <h3 id="Volatile读写的内存语义"><a href="#Volatile读写的内存语义" class="headerlink" title="Volatile读写的内存语义"></a>Volatile读写的内存语义</h3><ul>
