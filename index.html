@@ -231,7 +231,12 @@ var _hmt = _hmt || [];
 </ul>
 <p>volatile仅仅保证对单个volatile变量的读/写具有原子性，而锁的互斥执行的特性可以<br>确保对整个临界区代码的执行具有原子性。在功能上，锁比volatile更强大；在可伸缩性和执行<br>性能上，volatile更有优势。<a href="https://www.ibm.com/developerworks/cn/java/j-jtp06197.html" target="_blank" rel="external">正确使用 Volatile 变量</a></p>
 <h2 id="锁的内存语义"><a href="#锁的内存语义" class="headerlink" title="锁的内存语义"></a>锁的内存语义</h2><p>锁的功能：临界区互斥执行;内存语义</p>
-<h3 id="锁的释放、获取happens-before关系"><a href="#锁的释放、获取happens-before关系" class="headerlink" title="锁的释放、获取happens-before关系"></a>锁的释放、获取happens-before关系</h3>
+<h3 id="锁的释放、获取happens-before关系"><a href="#锁的释放、获取happens-before关系" class="headerlink" title="锁的释放、获取happens-before关系"></a>锁的释放、获取happens-before关系</h3><ul>
+<li>线程A释放一个锁，实质上是线程A向接下来将要获取这个锁的某个线程发出了（线程A<br>对共享变量所做修改的）消息。</li>
+<li>线程B获取一个锁，实质上是线程B接收了之前某个线程发出的（在释放这个锁之前对共<br>享变量所做修改的）消息。</li>
+<li>线程A释放锁，随后线程B获取这个锁，这个过程实质上是线程A通过主内存向线程B发<br>送消息。</li>
+</ul>
+
       
 
       
@@ -248,11 +253,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -372,11 +377,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -838,11 +843,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
         		</li>
       		
 		</ul>
@@ -911,11 +916,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
         		</li>
       		
 		</ul>
