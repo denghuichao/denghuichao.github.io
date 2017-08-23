@@ -158,6 +158,91 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-final域的内存语意" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/24/final域的内存语意/">final的内存语义</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/24/final域的内存语意/" class="archive-article-date">
+  	<time datetime="2017-08-23T16:40:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="final域的重排序规则"><a href="#final域的重排序规则" class="headerlink" title="final域的重排序规则"></a>final域的重排序规则</h3><ul>
+<li>在构造函数内对final域的写入，与随后把这个被构造对象的引用赋值给一个变量，这两个操作不能重排序。</li>
+<li>初次读一个包含final域的对象引用，与随后初次读这个final域，这两个操作不能重排序。</li>
+</ul>
+<h3 id="写final域的重排序规则"><a href="#写final域的重排序规则" class="headerlink" title="写final域的重排序规则"></a>写final域的重排序规则</h3><p>禁止将对final域的写重排序到构造函数之外</p>
+<ul>
+<li>JMM禁止编译器将final域的写重排序到构造函数之外。</li>
+<li>编译器会在final域的写之后，构造函数return之前，插入StoreStore屏障来禁止处理器将final域的写重排序到构造函数之外。</li>
+</ul>
+<p><strong>写final域的重排序规则确保，在对象的引用为任意线程可见之前，该对象的final域已经被正确初始化过了，而普通域不存在这个保障。</strong></p>
+<h3 id="读final域的重排序规则"><a href="#读final域的重排序规则" class="headerlink" title="读final域的重排序规则"></a>读final域的重排序规则</h3><ul>
+<li>初次读一个包含final域的对象引用，与随后初次读这个final域，这两个操作不能重排序，编译器在读final域操作前面加LoadLoad屏障。</li>
+</ul>
+<p><strong>读final域的重排序规则确保，在读一个final域之前，一定会先读包含这个final域的对象引用</strong></p>
+<h3 id="要实现final域的效果，还有一个前提"><a href="#要实现final域的效果，还有一个前提" class="headerlink" title="要实现final域的效果，还有一个前提"></a>要实现final域的效果，还有一个前提</h3><p><strong>对象引用不能从构造函数中溢出</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JMM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/24/final域的内存语意/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Volatile内存语义" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -828,94 +913,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/15/Java中的锁/">more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Install ES in ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/12/Install ES in ubuntu/">Ubuntu 16 安装 ElasticSearch</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/12/Install ES in ubuntu/" class="archive-article-date">
-  	<time datetime="2017-07-12T03:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Install-ES-in-Ubuntu"><a href="#Install-ES-in-Ubuntu" class="headerlink" title="Install ES in Ubuntu"></a>Install ES in Ubuntu</h2><ul>
-<li>wget -qO - <a href="https://packages.elastic.co/GPG-KEY-elasticsearch" target="_blank" rel="external">https://packages.elastic.co/GPG-KEY-elasticsearch</a> | sudo apt-key add -</li>
-<li>echo “deb <a href="https://packages.elastic.co/elasticsearch/2.x/debian" target="_blank" rel="external">https://packages.elastic.co/elasticsearch/2.x/debian</a> stable main” | sudo tee -a /etc/apt/sources.list.d/elasticsearch.list</li>
-<li>sudo apt-get update</li>
-<li>sudo apt-get install -y elasticsearch</li>
-</ul>
-<h2 id="start-ES-in-Ubuntu"><a href="#start-ES-in-Ubuntu" class="headerlink" title="start ES in Ubuntu"></a>start ES in Ubuntu</h2><ul>
-<li>sudo systemctl daemon-reload</li>
-<li>sudo systemctl enable elasticsearch.service</li>
-<li>sudo systemctl start elasticsearch.service</li>
-<li>curl -X GET <a href="http://localhost:9200" target="_blank" rel="external">http://localhost:9200</a></li>
-</ul>
-<h2 id="Install-Kibana-in-Ubuntu"><a href="#Install-Kibana-in-Ubuntu" class="headerlink" title="Install Kibana in Ubuntu"></a>Install Kibana in Ubuntu</h2><ul>
-<li>wget -qO - <a href="https://packages.elastic.co/GPG-KEY-elasticsearch" target="_blank" rel="external">https://packages.elastic.co/GPG-KEY-elasticsearch</a> | sudo apt-key add -</li>
-<li>echo “deb <a href="http://packages.elastic.co/kibana/4.5/debian" target="_blank" rel="external">http://packages.elastic.co/kibana/4.5/debian</a> stable main” | sudo tee -a /etc/apt/sources.list</li>
-<li>sudo apt-get update &amp;&amp; sudo apt-get install kibana</li>
-</ul>
-<h2 id="Start-Kabana"><a href="#Start-Kabana" class="headerlink" title="Start Kabana"></a>Start Kabana</h2><ul>
-<li>sudo systemctl start kibana</li>
-<li>sudo systemctl enable kibana</li>
-<li><a href="http://localhost:5601/" target="_blank" rel="external">http://localhost:5601/</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/12/Install ES in ubuntu/">more >></a>
         </p>
       
 
