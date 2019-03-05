@@ -9,7 +9,7 @@
   <title>final的内存语义 | hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="final域的重排序规则 在构造函数内对final域的写入，与随后把这个被构造对象的引用赋值给一个变量，这两个操作不能重排序。 初次读一个包含final域的对象引用，与随后初次读这个final域，这两个操作不能重排序。  写final域的重排序规则禁止将对final域的写重排序到构造函数之外  JMM禁止编译器将final域的写重排序到构造函数之外。 编译器会在final域的写之后，构造函数ret">
-<meta name="keywords" content="Java,并发编程,锁,JMM">
+<meta name="keywords" content="Java,锁,并发编程,JMM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="final的内存语义">
 <meta property="og:url" content="http://yoursite.com/2017/08/24/final域的内存语意/index.html">
@@ -244,11 +244,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">

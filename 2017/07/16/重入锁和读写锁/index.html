@@ -9,7 +9,7 @@
   <title>重入锁和读写锁 | hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="重入锁什么是可重入？已经获得锁的线程再次请求锁，能够连续多次获得该锁而不会被阻塞。 为什么需要重入？子类改写了父类的synchonized方法，然后调用父类中的方法，此时如果没有重入的锁，那么这段代码将产生死锁。 如果一个递归的方法是synchonized的，那么在拥有锁的情况下调用自身将会死锁。 synchronized关键字隐式支持锁的重入。">
-<meta name="keywords" content="Java,并发编程,锁">
+<meta name="keywords" content="Java,锁,并发编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重入锁和读写锁">
 <meta property="og:url" content="http://yoursite.com/2017/07/16/重入锁和读写锁/index.html">
@@ -272,11 +272,11 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">并发编程</a>
         		</li>
       		
 		</ul>
