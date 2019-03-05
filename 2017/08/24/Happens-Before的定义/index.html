@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: ElasticSearch | hcdeng‘s blog</title>
+  <title>hcdeng‘s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="##Happens-BeforeJMM最核心的概念，理解Happens-Before是理解JMM的关键 JMM的设计 程序员对内存模型的使用 -&amp;gt; 程序员希望在强内存模型下编程 编译器和处理器对内存模型的实现 -&amp;gt; 编译器和处理器设计人员希望弱内存模型，对它们的束缚比较小，更方便提供优化 JMM的平衡点，为程序员提供足够的可见性保证，同时对编译器和处理器的限制尽可能放松  Happen">
+<meta property="og:type" content="article">
 <meta property="og:title" content="hcdeng‘s blog">
-<meta property="og:url" content="http://yoursite.com/tags/ElasticSearch/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/08/24/Happens-Before的定义/index.html">
 <meta property="og:site_name" content="hcdeng‘s blog">
+<meta property="og:description" content="##Happens-BeforeJMM最核心的概念，理解Happens-Before是理解JMM的关键 JMM的设计 程序员对内存模型的使用 -&amp;gt; 程序员希望在强内存模型下编程 编译器和处理器对内存模型的实现 -&amp;gt; 编译器和处理器设计人员希望弱内存模型，对它们的束缚比较小，更方便提供优化 JMM的平衡点，为程序员提供足够的可见性保证，同时对编译器和处理器的限制尽可能放松  Happen">
+<meta property="og:updated_time" content="2017-08-24T14:38:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hcdeng‘s blog">
+<meta name="twitter:description" content="##Happens-BeforeJMM最核心的概念，理解Happens-Before是理解JMM的关键 JMM的设计 程序员对内存模型的使用 -&amp;gt; 程序员希望在强内存模型下编程 编译器和处理器对内存模型的实现 -&amp;gt; 编译器和处理器设计人员希望弱内存模型，对它们的束缚比较小，更方便提供优化 JMM的平衡点，为程序员提供足够的可见性保证，同时对编译器和处理器的限制尽可能放松  Happen">
   
     <link rel="alternative" href="/atom.xml" title="hcdeng‘s blog" type="application/atom+xml">
   
@@ -156,68 +160,148 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Happens-Before的定义" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##Happens-Before<br><strong>JMM最核心的概念，理解Happens-Before是理解JMM的关键</strong></p>
+<h4 id="JMM的设计"><a href="#JMM的设计" class="headerlink" title="JMM的设计"></a>JMM的设计</h4><ul>
+<li>程序员对内存模型的使用 -&gt; 程序员希望在强内存模型下编程</li>
+<li>编译器和处理器对内存模型的实现 -&gt; 编译器和处理器设计人员希望弱内存模型，对它们的束缚比较小，更方便提供优化</li>
+<li>JMM的平衡点，为程序员提供足够的可见性保证，同时对编译器和处理器的限制尽可能放松</li>
+</ul>
+<h3 id="Happens-Before的定义"><a href="#Happens-Before的定义" class="headerlink" title="Happens-Before的定义"></a>Happens-Before的定义</h3>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/12/Install ES in ubuntu/" class="archive-article-date">
-  	<time datetime="2017-07-12T03:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/12/Install ES in ubuntu/">Ubuntu 16 安装 ElasticSearch</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/24/Happens-Before的定义/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/03/05/Redis 和 I:O 多路复用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Redis 和 I/O 多路复用
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/08/24/final域的内存语意/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">final的内存语义</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -245,9 +329,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
