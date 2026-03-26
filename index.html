@@ -230,6 +230,69 @@
       margin: 0;
       padding-left: 18px;
     }
+    .archive-promo {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1.4fr);
+      gap: 18px;
+      margin-top: 22px;
+      padding: 20px 0 24px;
+      border-bottom: 1px solid var(--line);
+      align-items: stretch;
+    }
+    .archive-intro {
+      padding: 16px 18px 16px 0;
+      border-right: 1px solid var(--line);
+    }
+    .archive-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+    .archive-copy {
+      max-width: 28rem;
+      margin: 0;
+      color: #2f2a24;
+      font-size: 1rem;
+    }
+    .archive-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .archive-link {
+      display: block;
+      min-height: 100%;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.58), rgba(255,255,255,0.22));
+    }
+    .archive-link-primary {
+      border-width: 2px;
+      border-color: #1b1a18;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.66), rgba(255,255,255,0.24)),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02), transparent 45%);
+    }
+    .archive-link-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .archive-link strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Songti SC", "STSong", "Source Serif 4", Georgia, serif;
+      font-size: 1.46rem;
+      line-height: 1.1;
+    }
+    .archive-link span:last-child {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
     .brief-meta {
       display: grid;
       gap: 10px;
@@ -312,6 +375,7 @@
     .evidence-copy { padding-right: 8px; }
     @media (max-width: 980px) {
       .front-page,
+      .archive-promo,
       .story-grid,
       .evidence-row,
       .bullet-grid {
@@ -327,6 +391,10 @@
       }
       .lead-headline {
         max-width: none;
+      }
+      .archive-intro {
+        padding-right: 0;
+        border-right: 0;
       }
       .edition-bar::before,
       .edition-bar::after {
@@ -435,6 +503,26 @@
             </ul>
           </section>
         </aside>
+      </section>
+
+      <section class="archive-promo">
+        <div class="archive-intro">
+          <p class="eyebrow">档案入口</p>
+          <h2 class="archive-title">往期周刊</h2>
+          <p class="archive-copy">把已经刊发的判断、样本与经营线索集中归档，便于回看一条判断如何从微弱信号走向清晰趋势。</p>
+        </div>
+        <div class="archive-actions">
+          <a class="archive-link archive-link-primary" href="./opc-weekly/">
+            <span class="archive-link-label">Archive</span>
+            <strong>进入往期目录</strong>
+            <span>查看全部已发布周刊与每期正文页面。</span>
+          </a>
+          <a class="archive-link" href="./opc-weekly/2026-03-26/opc_weekly.md">
+            <span class="archive-link-label">Text Edition</span>
+            <strong>打开本期 Markdown</strong>
+            <span>适合转载排版、快速摘录与内容分发。</span>
+          </a>
+        </div>
       </section>
 
       <section class="section">
