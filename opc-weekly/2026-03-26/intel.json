@@ -1,11 +1,11 @@
 {
   "issue_date": "2026-03-26",
-  "generated_at": "2026-03-26 17:26:49",
+  "generated_at": "2026-03-26 17:31:19",
   "week_window": {
     "start": "2026-03-20",
     "end": "2026-03-26"
   },
-  "collected_candidates": 19,
+  "collected_candidates": 13,
   "selected_candidates": 6,
   "attempted_scrapes": 6,
   "items": [
@@ -29,36 +29,33 @@
       "title": "We built a directory of real founder stories—from $0 to $1k MRR",
       "author": "Ha Doan",
       "published_at": "2026-03-10",
-      "summary": "Indie Hackers has launched MRR Journey, a directory featuring real founder stories focused on early traction, first customers, and practical lessons from bootstrapped startups aiming for their first thousand dollars in monthly recurring revenue. The directory emphasizes honesty and structure, offering stories across S…",
-      "raw_summary": "Indie Hackers has launched MRR Journey, a directory featuring real founder stories focused on early traction, first customers, and practical lessons from bootstrapped startups aiming for their first thousand dollars in monthly recurring revenue. The directory emphasizes honesty and structure, offering stories across SaaS, AI tools, plugins, memberships, and developer tools, with a simple submission form for new contributions and an invitation to provide feedback on what’s missing. The post targets solo founders, indie hackers, and small teams who want actionable insights from people who’ve been there, encouraging participation from those who’ve reached or are pursuing $1k MRR. It also invites readers to explore the directory at mrrjourney.co and to engage with ongoing community-driven content and discussions on Indie Hackers, including trending posts and opportunities to share experiences.",
+      "summary": "Indie Hackers has launched MRR Journey, a directory of real founder stories focused on early traction and first $1k in monthly recurring revenue, aiming to provide honest, structured accounts of how bootstrapped founders gain paying customers. The directory collects practical lessons from SaaS, AI tools, plugins, memb…",
+      "raw_summary": "Indie Hackers has launched MRR Journey, a directory of real founder stories focused on early traction and first $1k in monthly recurring revenue, aiming to provide honest, structured accounts of how bootstrapped founders gain paying customers. The directory collects practical lessons from SaaS, AI tools, plugins, memberships, and developer tools, and invites submissions from solo founders, indie hackers, and small teams pursuing recurring revenue. The goal is to share clear, actionable journeys with the messy, real-world details left intact, and to learn from others who have successfully reached or are pursuing $1k MRR. The post encourages readers to contribute their own story if they’ve hit or are aiming for $1k MRR, and asks for feedback on missing elements to improve the resource. It also highlights ongoing community engagement, with trending posts, a prompt to stay informed via subscriptions, and links to related Indie Hackers resources such as groups, meetups, and product databases. The overall focus is on providing a lean, learning-oriented platform for early-stage founders to benchmark progress and overcome common bottlenecks between zero and one thousand dollars in monthly revenue.",
       "audience": [],
       "tactics": [],
       "trend_signals": [
-        "Founder stories structured around early traction and first $1k MRR",
-        "Practical lessons from SaaS, AI tools, plugins, memberships, and developer tools",
-        "A simple form to submit your own story (no gatekeeping)",
-        "What’s in it",
-        "Solo founders, indie hackers, and tiny teams building recurring-revenue businesses",
-        "People who want to learn from others’ experiences",
-        "If you hit $1k MRR or are working toward it, share your story",
-        "Who it’s for"
+        "What's in it",
+        "Who it's for",
+        "Call to action",
+        "Check it out",
+        "Question posed"
       ],
       "opportunity_angles": [
-        "What’s in it",
+        "What's in it",
         "Founder stories structured around early traction and first $1k MRR",
         "Practical lessons from SaaS, AI tools, plugins, memberships, and developer tools",
         "A simple form to submit your own story (no gatekeeping)",
-        "Who it’s for",
-        "Solo founders, indie hackers, and tiny teams building recurring-revenue businesses",
-        "People who want to learn from others’ experiences",
-        "If you hit $1k MRR or are working toward it, share your story"
+        "Who it's for",
+        "Solo founders",
+        "indie hackers",
+        "tiny teams building recurring-revenue businesses"
       ],
       "playbook_steps": [
-        "Indie Hackers has launched MRR Journey, a directory featuring real founder stories focused on early traction, first customers, and practical lessons from bootstrapped startups aiming for their first thousand dollars in monthly recurring revenue.",
-        "The post targets solo founders, indie hackers, and small teams who want actionable insights from people who’ve been there, encouraging participation from those who’ve reached or are pursuing $1k MRR.",
-        "Solo founders, indie hackers, and tiny teams building recurring-revenue businesses"
+        "Indie Hackers has launched MRR Journey, a directory of real founder stories focused on early traction and first $1k in monthly recurring revenue, aiming to provide honest, structured accounts of how bootstrapped founders gain paying customers.",
+        "The overall focus is on providing a lean, learning-oriented platform for early-stage founders to benchmark progress and overcome common bottlenecks between zero and one thousand dollars in monthly revenue."
       ],
       "evidence_points": [
+        "$1k",
         "$1k MRR"
       ],
       "metrics": [
@@ -71,13 +68,18 @@
           "label": "mention",
           "value": "$1k MRR",
           "context": ""
+        },
+        {
+          "label": "mention",
+          "value": "$1k",
+          "context": ""
         }
       ],
       "business_model": "",
       "scrape_status": "completed",
       "scrape_credits_used": 5,
       "metadata_title": "We built a directory of real founder stories—from $0 to $1k MRR",
-      "scrape_summary": "Indie Hackers has launched MRR Journey, a directory featuring real founder stories focused on early traction, first customers, and practical lessons from bootstrapped startups aiming for their first thousand dollars in monthly recurring revenue. The directory emphasizes honesty and structure, offering stories across SaaS, AI tools, plugins, memberships, and developer tools, with a simple submission form for new contributions and an invitation to provide feedback on what’s missing.\n\nThe post targets solo founders, indie hackers, and small teams who want actionable insights from people who’ve been there, encouraging participation from those who’ve reached or are pursuing $1k MRR. It also invites readers to explore the directory at mrrjourney.co and to engage with ongoing community-driven content and discussions on Indie Hackers, including trending posts and opportunities to share experiences.",
+      "scrape_summary": "Indie Hackers has launched MRR Journey, a directory of real founder stories focused on early traction and first $1k in monthly recurring revenue, aiming to provide honest, structured accounts of how bootstrapped founders gain paying customers. The directory collects practical lessons from SaaS, AI tools, plugins, memberships, and developer tools, and invites submissions from solo founders, indie hackers, and small teams pursuing recurring revenue. The goal is to share clear, actionable journeys with the messy, real-world details left intact, and to learn from others who have successfully reached or are pursuing $1k MRR.\n\nThe post encourages readers to contribute their own story if they’ve hit or are aiming for $1k MRR, and asks for feedback on missing elements to improve the resource. It also highlights ongoing community engagement, with trending posts, a prompt to stay informed via subscriptions, and links to related Indie Hackers resources such as groups, meetups, and product databases. The overall focus is on providing a lean, learning-oriented platform for early-stage founders to benchmark progress and overcome common bottlenecks between zero and one thousand dollars in monthly revenue.",
       "theme_ids": [
         "solo-economics",
         "lean-ops"
@@ -90,12 +92,6 @@
       "source_label": "Reddit",
       "matched_queries": [
         {
-          "label": "自动化经营",
-          "focus": "automation-and-leverage",
-          "priority": 3,
-          "query": "site:reddit.com/r/indiehackers solopreneur automation 2026"
-        },
-        {
           "label": "收入验证",
           "focus": "revenue-and-proof",
           "priority": 3,
@@ -103,30 +99,52 @@
         }
       ],
       "search_title": "Built to $5400 MRR in 5 months as solo founder without ad ...",
-      "search_description": "Solo indie hacker building workflow automation tool. Started with $1600 savings and zero budget for advertising. Had to figure out customer ...",
+      "search_description": "Solo indie hacker building workflow automation tool. Started with $1600 savings and zero budget for advertising. Had to figure out customer ...Read more",
       "search_published_at": "",
       "score": 135,
       "title": "Built to $5400 MRR in 5 months as solo founder without ad spend",
-      "author": "",
+      "author": "Mel_Ran",
       "published_at": "",
-      "summary": "A solo indie founder documents building a workflow automation tool to $5400 MRR in five months starting with $1600 and no advertising, relying entirely on organic channels. The strategy centers on laying a strong SEO foundation early, with a focus on longtail problem keywords, content publishing, and conversion optimi…",
-      "raw_summary": "A solo indie founder documents building a workflow automation tool to $5400 MRR in five months starting with $1600 and no advertising, relying entirely on organic channels. The strategy centers on laying a strong SEO foundation early, with a focus on longtail problem keywords, content publishing, and conversion optimization, rather than paid ads. Initial steps included directory submissions and listing the product on platforms like Product Hunt and Indie Hackers, followed by steady content creation and keyword targeting that gradually boosted domain authority and search rankings. Key takeaways emphasize the sustainability of organic growth: minimal upfront costs, negligible customer acquisition cost beyond a few hundred dollars, and the compounding effect of content that continues to attract customers over time. The author highlights tactical moves like 2-3 weekly posts, problem-focused content, and customer testimonials, while noting patience through months with zero revenue. The overarching lesson is that consistent execution of boring fundamentals—SEO, content, and gradual optimization—outperforms early, expensive paid campaigns for bootstrapped founders.",
+      "summary": "Solo indie hacker building workflow automation tool. Started with $1600 savings and zero budget for advertising. Had to figure out customer acquisition through purely organic channels. Five months later at $5400 monthly recurring revenue with 92% from organic search.",
+      "raw_summary": "Solo indie hacker building workflow automation tool. Started with $1600 savings and zero budget for advertising. Had to figure out customer acquisition through purely organic channels. Five months later at $5400 monthly recurring revenue with 92% from organic search.",
       "audience": [],
       "tactics": [],
       "trend_signals": [],
       "opportunity_angles": [],
       "playbook_steps": [
-        "A solo indie founder documents building a workflow automation tool to $5400 MRR in five months starting with $1600 and no advertising, relying entirely on organic channels.",
-        "The strategy centers on laying a strong SEO foundation early, with a focus on longtail problem keywords, content publishing, and conversion optimization, rather than paid ads.",
-        "Initial steps included directory submissions and listing the product on platforms like Product Hunt and Indie Hackers, followed by steady content creation and keyword targeting that gradually boosted domain authority and search rankings.",
-        "The author highlights tactical moves like 2-3 weekly posts, problem-focused content, and customer testimonials, while noting patience through months with zero revenue."
+        "Solo indie hacker building workflow automation tool.",
+        "Started with $1600 savings and zero budget for advertising."
       ],
       "evidence_points": [
-        "$5400 M",
         "$1600",
-        "5400 MRR"
+        "$5400 m"
       ],
       "metrics": [
+        {
+          "label": "costs.directory_service_one_time",
+          "value": "127",
+          "context": ""
+        },
+        {
+          "label": "costs.email_tool_monthly",
+          "value": "22",
+          "context": ""
+        },
+        {
+          "label": "costs.hosting_monthly",
+          "value": "15",
+          "context": ""
+        },
+        {
+          "label": "costs.seo_tools_monthly",
+          "value": "38",
+          "context": ""
+        },
+        {
+          "label": "costs.total_investment_over_5_months",
+          "value": "500",
+          "context": ""
+        },
         {
           "label": "mention",
           "value": "$5400 M",
@@ -141,18 +159,13 @@
           "label": "mention",
           "value": "5 months",
           "context": ""
-        },
-        {
-          "label": "mention",
-          "value": "5400 MRR",
-          "context": ""
         }
       ],
       "business_model": "",
       "scrape_status": "completed",
       "scrape_credits_used": 5,
       "metadata_title": "Built to $5400 MRR in 5 months as solo founder without ad spend : r/indiehackers",
-      "scrape_summary": "A solo indie founder documents building a workflow automation tool to $5400 MRR in five months starting with $1600 and no advertising, relying entirely on organic channels. The strategy centers on laying a strong SEO foundation early, with a focus on longtail problem keywords, content publishing, and conversion optimization, rather than paid ads. Initial steps included directory submissions and listing the product on platforms like Product Hunt and Indie Hackers, followed by steady content creation and keyword targeting that gradually boosted domain authority and search rankings.\n\nKey takeaways emphasize the sustainability of organic growth: minimal upfront costs, negligible customer acquisition cost beyond a few hundred dollars, and the compounding effect of content that continues to attract customers over time. The author highlights tactical moves like 2-3 weekly posts, problem-focused content, and customer testimonials, while noting patience through months with zero revenue. The overarching lesson is that consistent execution of boring fundamentals—SEO, content, and gradual optimization—outperforms early, expensive paid campaigns for bootstrapped founders.",
+      "scrape_summary": "A solo founder shares how they built a workflow automation SaaS to $5400 monthly recurring revenue in five months without any advertising, relying entirely on organic channels. The strategy centers on laying a strong SEO foundation and creating content that targets buyer-intent keywords, with early emphasis on directory submissions, product listings, and inbound content that compounds over time. Over the five months, the author details incremental traction, rising domain authority, and growing organic traffic, with revenue moving from zero to $780, then $2340, and finally $5400 MRR from a total of 69 customers.\n\nKey takeaways emphasize consistent, problem-centered content publishing, 12 active weeks of keyword research and keyword-focused posts, and the value of testimonials from happy customers. The post argues that organic growth offers a near-zero customer acquisition cost relative to paid ads, especially for bootstrapped ventures, and it highlights the importance of patience through the initial revenue lull while building a sustainable, long-term acquisition engine. The overall message is that steady execution of fundamental SEO and content strategies outperforms short-term hacks.",
       "theme_ids": [
         "solo-economics",
         "automation-leverage"
@@ -178,43 +191,18 @@
       "title": "From $0 to $1K MRR in 8 Months: Bootstrapping Habit Pixel as a Solo Dev",
       "author": "Hirvesh Munogee",
       "published_at": "2026-01-01",
-      "summary": "Hirvesh Munogee shares how Habit Pixel, a cross‑platform habit tracker, grew from a May 2025 launch to over $1K MRR in eight months as a solo bootstrapped developer. The story highlights a steady progression driven by user feedback, feature tweaks like negative habit tracking and smoother integrations, and strategic p…",
-      "raw_summary": "Hirvesh Munogee shares how Habit Pixel, a cross‑platform habit tracker, grew from a May 2025 launch to over $1K MRR in eight months as a solo bootstrapped developer. The story highlights a steady progression driven by user feedback, feature tweaks like negative habit tracking and smoother integrations, and strategic pricing changes such as purchasing power parity across countries to make premium features affordable in emerging markets. A turning point came when he started building in public on X, plus a Black Friday sale that boosted revenue and installs, followed by thoughtful localization to 12 languages which expanded the global audience and improved app store visibility. Key takeaways include the importance of listening to users, timing marketing efforts with seasonal spikes, and using in-app changelogs and feedback channels to foster trust and advocacy. The approach also emphasizes shipping early revenue to inform retention decisions, and the power of localization and PPP pricing to unlock demand in new regions. The author concludes with plans to reach $5K MRR by mid‑2026 and invites others to try Habit Pixel while sharing lessons learned about onboarding, pricing, and building in public.",
+      "summary": "Story of Habit Pixel, a habit tracker app, growing from May 2025 launch to $1K MRR in eight months. Solo bootstrapped, with user feedback driving development.",
+      "raw_summary": "Story of Habit Pixel, a habit tracker app, growing from May 2025 launch to $1K MRR in eight months. Solo bootstrapped, with user feedback driving development.",
       "audience": [],
       "tactics": [],
-      "trend_signals": [
-        "The Spark: Solving My Own Habit Struggles",
-        "I'm Hirvesh, a self-taught developer from Mauritius who's always battled with sticking to routines like working out or reading. Most trackers felt like dull checklists, so I created Habit Pixel to make it visual and engaging—like building a pixel art canvas with your daily progress. Built as a cross-platform mobile app, it lets users track habits in a fun, streak-based way.",
-        "The Launch: May 2025's Humble Beginnings",
-        "I launched on the App Store and Google Play in early May 2025, announcing it on X and Reddit around May 10-17. By May 19, I had about 1,000 active users and my first subscription sale. Downloads reached ~1,300 by late May. I went freemium with monthly ($1.99) and yearly ($33.99) plans, but early revenue was tiny—MRR hit just $28 by June due to onboarding issues that scared off users.June brought ~800 more users, but growth stalled. I focused on small fixes and planning features like better calendars and categories, but without much marketing, it was a quiet grind.",
-        "Steady Progress: June to October 2025",
-        "The summer months were about iteration without fanfare. Revenue slowly climbed to around $208 MRR by early November as the core product started resonating. I listened to user feedback, adding things like negative habit tracking (e.g., for sobriety) and smoother integrations. It was validating to see organic growth, but I knew I needed to build momentum.",
-        "Purchasing Power Parity (PPP) Pricing",
-        "In late October, I implemented purchasing power parity (PPP) pricing across all countries on both app stores. This adjusted subscription costs based on local economies—using indexes like Netflix for guidance—making premium features more affordable in emerging markets. Almost immediately, I saw purchases from countries I'd never reached before, like those in Southeast Asia and Latin America, proving how PPP opened doors to a truly global audience."
-      ],
-      "opportunity_angles": [
-        "The Spark: Solving My Own Habit Struggles",
-        "I'm Hirvesh, a self-taught developer from Mauritius who's always battled with sticking to routines like working out or reading. Most trackers felt like dull checklists, so I created Habit Pixel to make it visual and engaging—like building a pixel art canvas with your daily progress. Built as a cross-platform mobile app, it lets users track habits in a fun, streak-based way.",
-        "The Launch: May 2025's Humble Beginnings",
-        "I launched on the App Store and Google Play in early May 2025, announcing it on X and Reddit around May 10-17. By May 19, I had about 1,000 active users and my first subscription sale. Downloads reached ~1,300 by late May. I went freemium with monthly ($1.99) and yearly ($33.99) plans, but early revenue was tiny—MRR hit just $28 by June due to onboarding issues that scared off users.June brought ~800 more users, but growth stalled. I focused on small fixes and planning features like better calendars and categories, but without much marketing, it was a quiet grind.",
-        "Steady Progress: June to October 2025",
-        "The summer months were about iteration without fanfare. Revenue slowly climbed to around $208 MRR by early November as the core product started resonating. I listened to user feedback, adding things like negative habit tracking (e.g., for sobriety) and smoother integrations. It was validating to see organic growth, but I knew I needed to build momentum.",
-        "Purchasing Power Parity (PPP) Pricing",
-        "In late October, I implemented purchasing power parity (PPP) pricing across all countries on both app stores. This adjusted subscription costs based on local economies—using indexes like Netflix for guidance—making premium features more affordable in emerging markets. Almost immediately, I saw purchases from countries I'd never reached before, like those in Southeast Asia and Latin America, proving how PPP opened doors to a truly global audience."
-      ],
+      "trend_signals": [],
+      "opportunity_angles": [],
       "playbook_steps": [
-        "Hirvesh Munogee shares how Habit Pixel, a cross‑platform habit tracker, grew from a May 2025 launch to over $1K MRR in eight months as a solo bootstrapped developer.",
-        "The story highlights a steady progression driven by user feedback, feature tweaks like negative habit tracking and smoother integrations, and strategic pricing changes such as purchasing power parity across countries to make premium features affordable in emerging markets.",
-        "A turning point came when he started building in public on X, plus a Black Friday sale that boosted revenue and installs, followed by thoughtful localization to 12 languages which expanded the global audience and improved app store visibility.",
-        "Key takeaways include the importance of listening to users, timing marketing efforts with seasonal spikes, and using in-app changelogs and feedback channels to foster trust and advocacy.",
-        "The author concludes with plans to reach $5K MRR by mid‑2026 and invites others to try Habit Pixel while sharing lessons learned about onboarding, pricing, and building in public.",
-        "Most trackers felt like dull checklists, so I created Habit Pixel to make it visual and engaging—like building a pixel art canvas with your daily progress.",
-        "Built as a cross-platform mobile app, it lets users track habits in a fun, streak-based way.",
-        "The Launch: May 2025's Humble Beginnings"
+        "Story of Habit Pixel, a habit tracker app, growing from May 2025 launch to $1K MRR in eight months.",
+        "Solo bootstrapped, with user feedback driving development."
       ],
       "evidence_points": [
-        "$1K MRR",
-        "$5K MRR"
+        "$1K MRR"
       ],
       "metrics": [
         {
@@ -242,10 +230,10 @@
       "scrape_status": "completed",
       "scrape_credits_used": 5,
       "metadata_title": "From $0 to $1K MRR in 8 Months: Bootstrapping Habit Pixel as a Solo Dev",
-      "scrape_summary": "Hirvesh Munogee shares how Habit Pixel, a cross‑platform habit tracker, grew from a May 2025 launch to over $1K MRR in eight months as a solo bootstrapped developer. The story highlights a steady progression driven by user feedback, feature tweaks like negative habit tracking and smoother integrations, and strategic pricing changes such as purchasing power parity across countries to make premium features affordable in emerging markets. A turning point came when he started building in public on X, plus a Black Friday sale that boosted revenue and installs, followed by thoughtful localization to 12 languages which expanded the global audience and improved app store visibility.\n\nKey takeaways include the importance of listening to users, timing marketing efforts with seasonal spikes, and using in-app changelogs and feedback channels to foster trust and advocacy. The approach also emphasizes shipping early revenue to inform retention decisions, and the power of localization and PPP pricing to unlock demand in new regions. The author concludes with plans to reach $5K MRR by mid‑2026 and invites others to try Habit Pixel while sharing lessons learned about onboarding, pricing, and building in public.",
+      "scrape_summary": "Hirvesh Munogee shares the journey of Habit Pixel, a cross‑platform habit tracker he bootstrapped solo from May 2025 to reach $1K MRR by January 2026. The narrative covers early struggles with onboarding, iterative improvements, and a pivotal shift after adopting purchasing power parity pricing across countries, which unlocked sales in new regions. By November, building in public on X and a Black Friday promo pushed MRR to over $400 and subscriptions near 350, with 10,000 Google Play installs. December introductions included localization into 12 languages, boosting global reach, while January momentum surged as resolutions season spiked sales to over 200 in two days and crossed the $1K MRR mark.\n\nKey takeaways emphasize listening to users, timing launches with seasonal demand, building in public to accelerate growth, and making pricing and localization decisions that broaden access. The post also highlights practical tactics such as in-app changelogs and a simple get page that redirects to stores to reduce friction, plus a focus on revenue as a signal before optimizing retention. Looking ahead, the plan is to reach $5K MRR with more languages and smarter insights, inviting community feedback to shape future updates.",
       "theme_ids": [
         "solo-economics",
-        "distribution-engine"
+        "lean-ops"
       ]
     },
     {
@@ -272,8 +260,18 @@
       "raw_summary": "Engaging daily & building in public has fueled my growth. Lessons learned: Laser focus on your audience Find where they hang out Speak their ...",
       "audience": [],
       "tactics": [],
-      "trend_signals": [],
-      "opportunity_angles": [],
+      "trend_signals": [
+        "[object Object]",
+        "[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]",
+        "[object Object],[object Object]",
+        "[object Object],[object Object],[object Object],[object Object],[object Object]"
+      ],
+      "opportunity_angles": [
+        "[object Object]",
+        "[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]",
+        "[object Object],[object Object]",
+        "[object Object],[object Object],[object Object],[object Object],[object Object]"
+      ],
       "playbook_steps": [
         "Engaging daily & building in public has fueled my growth.",
         "Lessons learned: Laser focus on your audience Find where they hang out Speak their ..."
@@ -300,7 +298,7 @@
       "scrape_status": "completed",
       "scrape_credits_used": 5,
       "metadata_title": "EVGENII ANIKIN on X: \"🚀 Hit $7K MRR as a solo founder! 💻 8 months ago, I started from zero. Now at $43K in revenue with 275+ paying customers. No team, no SaaS experience—just pure grit. How? One word: Reddit. Engaging daily & building in public has fueled my growth. Lessons learned: 🎯 Laser\" / X",
-      "scrape_summary": "The content highlights that JavaScript is disabled in the browser and prompts the user to enable it or switch to a supported browser to continue using X. It provides quick access links to the Help Center, Terms of Service, Privacy Policy, Cookie Policy, and other legal and policy pages, along with login and sign-up options. A user post by EVGENII ANIKIN describes reaching $43K in revenue with 275+ paying customers in eight months, crediting Reddit and public-building strategies, and outlining lessons about audience focus, engagement, and building connections, with plans to expand to email and team growth.\n\nThe page also features a sign-up invitation for new users, a reminder about personalized timelines, and various navigation options including trending topics and accessibility/ads information. It emphasizes staying updated with the latest posts and conversations on X, while providing standard legal and policy links and a footer noting © 2026 X Corp.",
+      "scrape_summary": "JavaScript is currently disabled in the browser, requiring users to enable it or switch to a supported browser to continue using X. The page provides links to the Help Center with a list of supported browsers and standard legal and policy pages such as Terms of Service, Privacy Policy, Cookie Policy, and Imprint. The content appears to be a mix of a login and signup prompt, navigation options, and meta information typical of X’s interface, including a user post from EVGENII ANIKIN about achieving seven thousand dollars MRR as a solo founder and the lessons learned from engaging on Reddit. It also includes typical footer links for accessibility, ads information, and corporate © 2026 X Corp.",
       "theme_ids": [
         "lean-ops",
         "solo-economics"
@@ -326,22 +324,56 @@
       "title": "Built to $8K MRR in 6 months without spending on ads - the boring tactics that worked",
       "author": "No-Risk747",
       "published_at": "",
-      "summary": "A solo founder shares how they built an eight-thousand-dollar-per-month SaaS in six months without spending on ads, by focusing exclusively on organic growth and a strong SEO foundation. The approach centers on early directory submissions to boost domain authority, consistent long-tail content publishing, and creating…",
-      "raw_summary": "A solo founder shares how they built an eight-thousand-dollar-per-month SaaS in six months without spending on ads, by focusing exclusively on organic growth and a strong SEO foundation. The approach centers on early directory submissions to boost domain authority, consistent long-tail content publishing, and creating buyer-intent comparison pages to capture search-driven inquiries. By months three and four, organic traffic and backlinks improved search rankings, leading to a 32% conversion rate from organic visitors and over $1,800 in monthly recurring revenue, with traction accelerating to $8K MRR by month six. Key takeaways emphasize patience and discipline: start with directories and content to compound over time, target problem-focused keywords rather than competitive terms, and optimize landing pages to maximize conversions from limited traffic. The method highlights near-zero customer acquisition cost through organic channels, contrasting it with the high expense of paid ads, and argues that sustainable, bootstrapped growth comes from consistent, low-budget SEO efforts and credible testimonials from happy customers.",
+      "summary": "The post shares a solo founder’s success story of growing a workflow automation micro-SaaS to $8K MRR in six months without any paid advertising. It emphasizes starting with $2,000, focusing on free acquisition channels, and building a sustainable SEO foundation that compounds over time. Key actions included directory…",
+      "raw_summary": "The post shares a solo founder’s success story of growing a workflow automation micro-SaaS to $8K MRR in six months without any paid advertising. It emphasizes starting with $2,000, focusing on free acquisition channels, and building a sustainable SEO foundation that compounds over time. Key actions included directory submissions to boost Domain Authority, publishing three long-tail targeted blog posts weekly, and creating comparison pages to capture buyer-intent searches. The narrative highlights a 32% organic conversion rate and near-zero customer acquisition cost, arguing that boring, consistent SEO-driven growth outperforms flashy paid campaigns. Early traction comes from combining directory listings, targeted content, and conversion optimization, with results increasing as search visibility improves. The author notes that competitive keywords were a waste at first, while organic channels and testimonials helped credibility, leading to steady growth in traffic and MRR. The cost remained under $500 over six months, and the author frames the approach as sweat equity that yields long-term, scalable gains versus ad-spend dependence. Overall, the takeaway is that disciplined, problem-focused content and SEO, executed consistently, can deliver durable profitability for bootstrapped startups.",
       "audience": [],
-      "tactics": [],
+      "tactics": [
+        "Rankings for competitive keywords early were a complete waste due to low DA",
+        "Twitter and Reddit provided awareness but not paying customers",
+        "Focus on organic search due to user intent"
+      ],
       "trend_signals": [],
       "opportunity_angles": [],
       "playbook_steps": [
-        "A solo founder shares how they built an eight-thousand-dollar-per-month SaaS in six months without spending on ads, by focusing exclusively on organic growth and a strong SEO foundation.",
-        "The approach centers on early directory submissions to boost domain authority, consistent long-tail content publishing, and creating buyer-intent comparison pages to capture search-driven inquiries.",
-        "Key takeaways emphasize patience and discipline: start with directories and content to compound over time, target problem-focused keywords rather than competitive terms, and optimize landing pages to maximize conversions from limited traffic."
+        "Rankings for competitive keywords early were a complete waste due to low DA",
+        "Twitter and Reddit provided awareness but not paying customers",
+        "Focus on organic search due to user intent",
+        "It emphasizes starting with $2,000, focusing on free acquisition channels, and building a sustainable SEO foundation that compounds over time.",
+        "Key actions included directory submissions to boost Domain Authority, publishing three long-tail targeted blog posts weekly, and creating comparison pages to capture buyer-intent searches.",
+        "Early traction comes from combining directory listings, targeted content, and conversion optimization, with results increasing as search visibility improves.",
+        "Overall, the takeaway is that disciplined, problem-focused content and SEO, executed consistently, can deliver durable profitability for bootstrapped startups."
       ],
       "evidence_points": [
-        "$1,800",
-        "$8K MRR"
+        "$8K MRR",
+        "$2,000",
+        "$500"
       ],
       "metrics": [
+        {
+          "label": "costs.directory_service",
+          "value": "127",
+          "context": ""
+        },
+        {
+          "label": "costs.email_tool",
+          "value": "20",
+          "context": ""
+        },
+        {
+          "label": "costs.hosting",
+          "value": "15",
+          "context": ""
+        },
+        {
+          "label": "costs.seo_tools",
+          "value": "40",
+          "context": ""
+        },
+        {
+          "label": "costs.total_over_6_months",
+          "value": "500",
+          "context": ""
+        },
         {
           "label": "mention",
           "value": "$8K MRR",
@@ -349,17 +381,12 @@
         },
         {
           "label": "mention",
-          "value": "$1,800",
+          "value": "$2,000",
           "context": ""
         },
         {
           "label": "mention",
-          "value": "$2000",
-          "context": ""
-        },
-        {
-          "label": "mention",
-          "value": "6 months",
+          "value": "$500",
           "context": ""
         }
       ],
@@ -367,72 +394,58 @@
       "scrape_status": "completed",
       "scrape_credits_used": 5,
       "metadata_title": "Built to $8K MRR in 6 months without spending on ads - the boring tactics that worked : r/indiehackers",
-      "scrape_summary": "A solo founder shares how they built an eight-thousand-dollar-per-month SaaS in six months without spending on ads, by focusing exclusively on organic growth and a strong SEO foundation. The approach centers on early directory submissions to boost domain authority, consistent long-tail content publishing, and creating buyer-intent comparison pages to capture search-driven inquiries. By months three and four, organic traffic and backlinks improved search rankings, leading to a 32% conversion rate from organic visitors and over $1,800 in monthly recurring revenue, with traction accelerating to $8K MRR by month six.\n\nKey takeaways emphasize patience and discipline: start with directories and content to compound over time, target problem-focused keywords rather than competitive terms, and optimize landing pages to maximize conversions from limited traffic. The method highlights near-zero customer acquisition cost through organic channels, contrasting it with the high expense of paid ads, and argues that sustainable, bootstrapped growth comes from consistent, low-budget SEO efforts and credible testimonials from happy customers.",
+      "scrape_summary": "The post shares a solo founder’s success story of growing a workflow automation micro-SaaS to $8K MRR in six months without any paid advertising. It emphasizes starting with $2,000, focusing on free acquisition channels, and building a sustainable SEO foundation that compounds over time. Key actions included directory submissions to boost Domain Authority, publishing three long-tail targeted blog posts weekly, and creating comparison pages to capture buyer-intent searches. The narrative highlights a 32% organic conversion rate and near-zero customer acquisition cost, arguing that boring, consistent SEO-driven growth outperforms flashy paid campaigns.\n\nEarly traction comes from combining directory listings, targeted content, and conversion optimization, with results increasing as search visibility improves. The author notes that competitive keywords were a waste at first, while organic channels and testimonials helped credibility, leading to steady growth in traffic and MRR. The cost remained under $500 over six months, and the author frames the approach as sweat equity that yields long-term, scalable gains versus ad-spend dependence. Overall, the takeaway is that disciplined, problem-focused content and SEO, executed consistently, can deliver durable profitability for bootstrapped startups.",
       "theme_ids": [
         "solo-economics",
         "distribution-engine"
       ]
     },
     {
-      "id": "x-com-lifeofbi-status-2033625746648834441",
-      "url": "https://x.com/lifeofbi/status/2033625746648834441",
+      "id": "x-com-seraleev-status-2011057684326367485",
+      "url": "https://x.com/seraleev/status/2011057684326367485",
       "source_id": "x",
       "source_label": "X",
       "matched_queries": [
         {
-          "label": "独立开发打法",
-          "focus": "playbooks-and-lessons",
-          "priority": 2,
-          "query": "site:x.com bootstrapped founder lessons distribution"
+          "label": "公开增长信号",
+          "focus": "revenue-and-distribution",
+          "priority": 3,
+          "query": "site:x.com solo founder MRR build in public"
         }
       ],
-      "search_title": "Most founders chase funding. Recharge hit $20M ARR ...",
-      "search_description": "Most founders chase funding. Recharge hit $20M ARR before raising a dollar. That alone puts him in the top 1% of founders. Bootstrapping ...",
+      "search_title": "Time to update my intro Viktor Seraleev 👋 I started my solo ...",
+      "search_description": "I started my solo founder journey in 2020 when I launched my first mobile app. ... Build in public. Based in Chile. Married. Two kids. ‍♂️ ...Read more",
       "search_published_at": "",
-      "score": 119,
-      "title": "Most founders chase funding. Recharge hit $20M ARR ...",
-      "author": "Fan Bi (buy/ advise $5-50M brands in special sits)",
+      "score": 122,
+      "title": "Time to update my intro Viktor Seraleev 👋 I started my solo ...",
+      "author": "Viktor Seraleev",
       "published_at": "",
-      "summary": "Most founders chase funding. Recharge hit $20M ARR before raising a dollar. That alone puts him in the top 1% of founders. Bootstrapping ...",
-      "raw_summary": "Most founders chase funding. Recharge hit $20M ARR before raising a dollar. That alone puts him in the top 1% of founders. Bootstrapping ...",
+      "summary": "I started my solo founder journey in 2020 when I launched my first mobile app. ... Build in public. Based in Chile. Married. Two kids. ‍♂️",
+      "raw_summary": "I started my solo founder journey in 2020 when I launched my first mobile app. ... Build in public. Based in Chile. Married. Two kids. ‍♂️",
       "audience": [],
       "tactics": [],
-      "trend_signals": [
-        "© 2026 X Corp.",
-        "Don’t miss what’s happening,People on X are the first to know.",
-        "Log in,Sign up"
+      "trend_signals": [],
+      "opportunity_angles": [],
+      "playbook_steps": [
+        "I started my solo founder journey in 2020 when I launched my first mobile app.",
+        "Build in public."
       ],
-      "opportunity_angles": [
-        "We’ve detected that JavaScript is disabled in this browser. Please enable JavaScript or switch to a supported browser to continue using x.com.",
-        "You can see a list of supported browsers in our Help Center.",
-        "© 2026 X Corp.",
-        "Don’t miss what’s happening,People on X are the first to know.",
-        "Log in,Sign up"
-      ],
-      "playbook_steps": [],
-      "evidence_points": [
-        "$20M ARR"
-      ],
+      "evidence_points": [],
       "metrics": [
         {
           "label": "mention",
-          "value": "$20M ARR",
-          "context": ""
-        },
-        {
-          "label": "mention",
-          "value": "$5",
+          "value": "$410K",
           "context": ""
         }
       ],
       "business_model": "",
       "scrape_status": "completed",
       "scrape_credits_used": 5,
-      "metadata_title": "Fan Bi (buy/ advise $5-50M brands in special sits) on X: \"Most founders chase funding. Recharge hit $20M ARR before raising a dollar. That alone puts him in the top 1% of founders. Bootstrapping forces you to solve the only problem that matters: Customers using and paying for the product.\" / X",
-      "scrape_summary": "The message informs users that JavaScript is disabled in their browser and instructs them to enable it or switch to a supported browser to continue using X. It points to the Help Center for a list of supported browsers and provides quick links to legal and policy pages such as Terms of Service, Privacy Policy, Cookie Policy, and Imprint, along with ads information. The page also includes options to log in or sign up, and displays the site branding for X Corp with © 2026. The content centers on encouraging access and directing users to resources and account actions while noting the browser compatibility requirements.",
+      "metadata_title": "Viktor Seraleev on X: \"Time to update my intro Viktor Seraleev 👋 I started my solo founder journey in 2020 when I launched my first mobile app. Eight months later, I sold it for $410K. After that came a streak of failed projects (turns out having money doesn’t guarantee success). Nothing worked, so https://t.co/e5gD4Zy2fN\" / X",
+      "scrape_summary": "The content describes a typical error message indicating that JavaScript is disabled in the browser and suggests enabling it or switching to a supported browser, with links to help resources and legal policies. It then showcases a user post from Viktor Seraleev detailing his entrepreneurial journey, including launching several apps, revenue milestones, a legal setback with Apple, and current goals while highlighting his stance on building in public and his personal background. The page also invites new users to sign up, presents a few navigation options, and lists trending links and policy references, all within a social media interface. The overall focus is on user onboarding, profile stories, and platform policy information.",
       "theme_ids": [
-        "solo-economics",
-        "automation-leverage"
+        "lean-ops",
+        "solo-economics"
       ]
     }
   ]
